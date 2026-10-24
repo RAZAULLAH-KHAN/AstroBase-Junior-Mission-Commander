@@ -1,0 +1,211 @@
+{
+  "systems": {
+    "lifeSupport": "Life support",
+    "thermal": "Heating",
+    "water": "Water recycling",
+    "greenhouse": "Greenhouse lights",
+    "lab": "Science lab"
+  },
+  "roles": {
+    "commander": "Commander",
+    "engineer": "Engineer",
+    "botanist": "Botanist",
+    "medic": "Medic",
+    "scientist": "Scientist"
+  },
+  "roleBonus": {
+    "commander": "+5% repair success while active",
+    "engineer": "Repairs take 1 day when on Maintenance",
+    "botanist": "+10% food when in the Greenhouse",
+    "medic": "Crew recover +2 health/day while active",
+    "scientist": "+15% science points on Research or EVA"
+  },
+  "tasks": {
+    "maintenance": "Maintenance",
+    "greenhouse": "Greenhouse",
+    "research": "Research",
+    "regolith": "Regolith processing",
+    "eva": "EVA (spacewalk)",
+    "rest": "Rest"
+  },
+  "taskHelp": {
+    "maintenance": "Needed for fast repairs and panel cleaning.",
+    "greenhouse": "Tends the plants. The Botanist adds +10% food.",
+    "research": "Runs lab experiments for science points.",
+    "regolith": "Processes surface soil into +3 build points a day.",
+    "eva": "Spacewalk for samples. Needs exactly 2 crew.",
+    "rest": "Recovers +2 extra health."
+  },
+  "status": {
+    "active": "Active",
+    "sick": "Sick",
+    "sheltering": "Sheltering",
+    "onEVA": "On EVA",
+    "evacuated": "Evacuated"
+  },
+  "resources": {
+    "o2Kg": "Oxygen",
+    "waterKg": "Water",
+    "foodKcal": "Food",
+    "batteryKWh": "Battery",
+    "buildPoints": "Build points"
+  },
+  "alerts": {
+    "O2_LOW": "Oxygen will run out in {days} days at the current rate.",
+    "WATER_LOW": "Water will run out in {days} days at the current rate.",
+    "FOOD_LOW": "Food will run out in {days} days at the current rate.",
+    "POWER_SHED": "Not enough power: {systems} did not get full power.",
+    "BATTERY_LOW": "The battery ended the day at {pct}% charge.",
+    "BATTERY_WASTE": "{kwh} kWh of solar energy was wasted because the battery was full.",
+    "HEALTH_LOW": "{name}'s health is {health}.",
+    "DOSE_HIGH": "Average crew radiation dose is {pct}% of the mission budget.",
+    "FORECAST": "Forecast: {event} expected {when}.",
+    "EVENT_ACTIVE": "{event} in progress (until day {until}).",
+    "MODULE_DOWN": "{module} is damaged ({pct}% condition). Repair it."
+  },
+  "objectives": {
+    "samples": { "name": "Collect rock samples", "requirement": "Complete 3 EVAs" },
+    "harvest": { "name": "Grow the first harvest", "requirement": "A greenhouse bed reaches full maturity" },
+    "storm": { "name": "Weather a storm", "requirement": "Get through a dust storm or shadow period without cutting life support" },
+    "lab": { "name": "Run lab experiments", "requirement": "Lab fully powered with a researcher for 5 days" },
+    "drill.mars": { "name": "Subsurface sample", "requirement": "2 drilling EVAs (uses 10 kWh in total)" },
+    "drill.moon": { "name": "Ice prospecting", "requirement": "2 drilling EVAs (uses 10 kWh in total). Gives +60 kg water" }
+  },
+  "outcome": {
+    "success": "Mission complete",
+    "o2": "Air supply lost",
+    "water": "Water supply lost",
+    "food": "Food supply lost",
+    "evacuated": "Crew evacuated",
+    "radiation": "Radiation limit exceeded"
+  },
+  "outcomeExplain": {
+    "o2": "The oxygen tanks emptied and the generator could not keep up with the crew's breathing.",
+    "water": "The water tanks ran dry. Without enough recycling, water is lost every day.",
+    "food": "The crew ate less than half of what they needed for 3 days in a row.",
+    "evacuated": "Three or more astronauts became too unwell and had to be sent home.",
+    "radiation": "The crew's average radiation dose went over the mission budget."
+  },
+  "headlines": {
+    "normal": "A calm day. All systems received full power.",
+    "allServedWaste": "All systems ran, but {kwh} kWh of sunshine was wasted.",
+    "shedNight": "The battery ran out during the night and {systems} lost power.",
+    "shedEvent": "{event} cut solar power by {pct}%, and {systems} lost power.",
+    "shedGeneric": "Power ran {kwh} kWh short, and {systems} lost power.",
+    "eventHandled": "{event} continues, but every system kept full power.",
+    "objective": "Objective complete: {name} (+{sp} SP).",
+    "missionComplete": "{label} {day} complete. The mission is a success!",
+    "missionFailed": "Mission ended: {reason}.",
+    "event": "{event}: {text}",
+    "spe": "A solar storm hit the base. Average dose today: {dose} mSv.",
+    "speSheltered": "A solar storm hit, but the shelter blocked most of it. Average dose today: {dose} mSv.",
+    "failure": "{module} failed today.",
+    "resupply": "The resupply lander arrived: +{food} kcal of food and +{bp} build points.",
+    "evacuation": "{name} became too unwell and was evacuated."
+  },
+  "chain": {
+    "dustStorm": "Dust storm (τ {tau})",
+    "globalStorm": "Global dust storm (τ {tau})",
+    "shadow": "Shadow period ({pct}% sunlight)",
+    "panelDust": "Dusty panels ({pct}% clean)",
+    "solarDamage": "Damaged solar array",
+    "solarDrop": "Solar power −{pct}%",
+    "smallBattery": "Battery too small for the night",
+    "batteryFull": "Battery full before sunset",
+    "wasted": "{kwh} kWh of sunshine wasted",
+    "highDemand": "Demand higher than supply",
+    "deficit": "Power short by {kwh} kWh",
+    "shed": "{system} cut to {pct}%",
+    "o2Lost": "Oxygen made −{kg} kg",
+    "waterLost": "Wastewater tank overflowed: −{kg} kg",
+    "waterDelayed": "{kg} kg of used water waiting",
+    "foodLost": "Food grown −{kcal} kcal",
+    "heatLost": "Base got cold (health −{health})",
+    "scienceLost": "Science −{sp} SP",
+    "spe": "Solar particle event",
+    "shelter": "Crew in storm shelter",
+    "noShelter": "Crew not sheltered",
+    "dose": "Dose +{dose} mSv per person",
+    "healthHit": "Health −{health}",
+    "failure": "{module} fault",
+    "condition": "{module} at {pct}%",
+    "repairDone": "{module} repaired",
+    "o2Output": "Oxygen output −{kg} kg",
+    "waterOutput": "Water recovery −{kg} kg",
+    "batteryCapacity": "Battery capacity −{kwh} kWh",
+    "cropDisease": "Crop disease",
+    "yieldHalved": "Greenhouse yield halved (−{kcal} kcal)",
+    "illness": "{name} is sick",
+    "noWork": "No work from {role}",
+    "cleaning": "Panels cleaned",
+    "powerBack": "Solar power +{pct}%",
+    "resupply": "Resupply lander",
+    "supplies": "+{food} kcal, +{bp} BP",
+    "dimmer": "{system} set to {pct}%",
+    "powerSaved": "Saved {kwh} kWh",
+    "build": "{module} upgraded to level {level}"
+  },
+  "chainDetail": {
+    "dustStorm": "Dust in the air blocks sunlight before it reaches the panels.",
+    "shadow": "The crater rim is blocking the Sun, so the panels are in shadow.",
+    "panelDust": "Dust settled on the panels and blocks part of the light.",
+    "solarDrop": "Less sunlight on the panels means less electricity.",
+    "smallBattery": "Half of every sol is night. The battery could not store enough to last until sunrise.",
+    "batteryFull": "Once the battery is full, extra solar energy has nowhere to go. A bigger battery would store it for the night.",
+    "deficit": "The base needed more energy than the panels and battery could give.",
+    "shed": "When power is short, systems at the bottom of the priority list are switched off first.",
+    "spe": "The Sun threw out a burst of fast protons. They pass through thin walls.",
+    "shelter": "Water tanks around the shelter absorb most of the protons.",
+    "waterDelayed": "Without power, used water waits in a tank. It is cleaned later, but the tank can overflow.",
+    "dose": "Radiation dose adds up over the whole mission.",
+    "failure": "Machines wear out. Spare parts and a good engineer keep the base running.",
+    "cropDisease": "A disease spreads quickly when all plants are the same type.",
+    "resupply": "Cargo from Earth takes months to arrive, so it is planned far ahead."
+  },
+  "quotes": {
+    "botanist": {
+      "shed": "My plants need light soon, or this harvest is lost!",
+      "disease": "I'm removing the sick plants before the disease spreads.",
+      "harvest": "First full harvest! Fresh salad for everyone tonight.",
+      "normal": "The plants look green and healthy today."
+    },
+    "engineer": {
+      "deficit": "We're short on power. I can't keep every system running tonight.",
+      "failure": "I've found the fault. Give me time and parts and I'll fix it.",
+      "dust": "These panels are covered in dust. A cleaning would help a lot.",
+      "normal": "All systems nominal. The power bus is stable."
+    },
+    "medic": {
+      "dose": "Radiation doses are rising. We should strengthen our shielding.",
+      "health": "Some of the crew are not well. They need food, water and rest.",
+      "sick": "I'm looking after our patient. Rest is the best medicine.",
+      "normal": "Everyone passed their health check this morning."
+    },
+    "scientist": {
+      "eva": "Look at these rock layers! This sample could tell us about ancient water.",
+      "lab": "The lab results are coming in nicely.",
+      "normal": "Every day here teaches us something new."
+    },
+    "commander": {
+      "storm": "Stay calm and follow the plan. We've trained for this.",
+      "spe": "Everyone into the shelter, now. No exceptions.",
+      "normal": "Good work, team. One more day closer to home."
+    }
+  },
+  "tutorial": [
+    { "target": "gauge-o2", "title": "This is your oxygen", "text": "Your crew breathes 0.82 kg each per day. The gauge shows how many days it will last." },
+    { "target": "power-flow", "title": "Power comes from the Sun", "text": "Solar panels make electricity. Dust and darkness reduce it, and the battery covers the night." },
+    { "target": "priority-list", "title": "You decide who gets power", "text": "Drag systems to change their priority, or move the greenhouse slider to give it more or less light." },
+    { "target": "end-sol", "title": "End the day", "text": "When you are ready, press End Sol. The simulation runs one day with your decisions." },
+    { "target": "why", "title": "Learn what happened", "text": "Read the report. The \"Why did this happen?\" button explains every change, step by step." }
+  ],
+  "demoGuide": {
+    "1": "Day 1: Look at the battery. It will run short at night. Open Build and upgrade the Battery Bank, then press End Sol.",
+    "2": "Day 2: A dust storm is forecast for tomorrow. Lower the greenhouse and lab sliders to save energy, then End Sol.",
+    "3": "Day 3: The storm is here. Read the report and open \"Why did this happen?\" to see the chain of causes.",
+    "4": "Day 4: The storm continues. Keep life support and heating at the top of the priority list.",
+    "5": "Day 5: The storm is clearing. Panels are dusty — try Clean panels with a crew member on Maintenance.",
+    "6": "Day 6: A solar flare is forecast. If you built a Storm Shelter, use Shelter. Otherwise, note the radiation lesson.",
+    "7": "Day 7: Last day of the demo. Press End Sol to see your mission debrief."
+  }
+}

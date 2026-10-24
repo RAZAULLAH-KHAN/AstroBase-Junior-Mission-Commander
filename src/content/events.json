@@ -1,0 +1,237 @@
+[
+  {
+    "id": "mars.dust.regional",
+    "name": "Regional dust storm",
+    "category": "power",
+    "kind": "dustStorm",
+    "locations": ["mars"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.05,
+    "durationDays": [3, 6],
+    "warningDays": 1,
+    "warningChance": 1,
+    "params": { "tau": [2.0, 3.5] },
+    "teaches": "Energy storage and priorities",
+    "text": {
+      "forecast": "Weather satellites see a regional dust storm coming. The sky will darken soon.",
+      "start": "A regional dust storm has darkened the sky.",
+      "effect": "Solar power may drop by about 40 to 65% for several sols.",
+      "engineers": "Charge the batteries, lower non-essential power such as lab and greenhouse lights, and delay EVAs.",
+      "libraryKey": "DUST_SKY_COEFF"
+    }
+  },
+  {
+    "id": "mars.dust.global",
+    "name": "Global dust storm",
+    "category": "power",
+    "kind": "dustStorm",
+    "locations": ["mars"],
+    "difficulties": ["commander"],
+    "baseProbability": 0.01,
+    "durationDays": [8, 12],
+    "warningDays": 2,
+    "warningChance": 1,
+    "params": { "tau": [5.0, 8.0] },
+    "teaches": "Why the Opportunity rover was lost",
+    "text": {
+      "forecast": "A global dust storm is spreading around the planet. Expect almost no sunlight for more than a week.",
+      "start": "A global dust storm has wrapped the whole planet in dust.",
+      "effect": "Solar power may drop by 80 to 90% for 8 to 12 sols.",
+      "engineers": "Keep only air, heat and water running. Every kilowatt-hour in the battery matters.",
+      "libraryKey": "OPPORTUNITY_STORM_TAU"
+    }
+  },
+  {
+    "id": "moon.shadow",
+    "name": "Shadow period",
+    "category": "power",
+    "kind": "shadow",
+    "locations": ["moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.05,
+    "durationDays": [2, 4],
+    "warningDays": 1,
+    "warningChance": 1,
+    "params": { "illumination": [0.0, 0.2] },
+    "teaches": "Battery sizing",
+    "text": {
+      "forecast": "Orbit calculations show the crater rim will block the Sun soon.",
+      "start": "The base has entered a shadow period. Very little sunlight reaches the panels.",
+      "effect": "Solar power will be 0 to 25% of normal for 2 to 4 days.",
+      "engineers": "Fill the batteries, switch off non-essential systems, and protect heating and life support.",
+      "libraryKey": "LUNAR_SP_ILLUMINATION_MAX"
+    }
+  },
+  {
+    "id": "spe",
+    "name": "Solar particle event",
+    "category": "radiation",
+    "kind": "spe",
+    "locations": ["mars", "moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.02,
+    "durationDays": [1, 2],
+    "warningDays": 1,
+    "warningChance": 0.7,
+    "params": {},
+    "teaches": "Shielding and space-weather forecasting",
+    "text": {
+      "forecast": "Space weather forecast: a solar flare may send a burst of radiation toward the base.",
+      "start": "A solar particle event is hitting the base with high-energy protons.",
+      "effect": "Radiation dose will jump far above normal while it lasts.",
+      "engineers": "Move the crew into the storm shelter and cancel all spacewalks.",
+      "libraryKey": "SHELTER_SPE_REDUCTION"
+    }
+  },
+  {
+    "id": "fail.o2gen",
+    "name": "Oxygen generator fault",
+    "category": "failure.o2gen",
+    "kind": "moduleFailure",
+    "locations": ["mars", "moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.02,
+    "durationDays": [1, 1],
+    "warningDays": 0,
+    "warningChance": 0,
+    "params": { "condition": [0.3, 0.3] },
+    "module": "o2Generator",
+    "teaches": "Redundancy and repairs",
+    "text": {
+      "forecast": "",
+      "start": "A fault in the oxygen generator cut its output to 30%.",
+      "effect": "The base makes much less oxygen until it is repaired.",
+      "engineers": "Repair it quickly. An Engineer on Maintenance fixes it in one day.",
+      "libraryKey": "O2_GEN_CAPACITY"
+    }
+  },
+  {
+    "id": "fail.recycler",
+    "name": "Water recycler fault",
+    "category": "failure.recycler",
+    "kind": "moduleFailure",
+    "locations": ["mars", "moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.02,
+    "durationDays": [1, 1],
+    "warningDays": 0,
+    "warningChance": 0,
+    "params": { "condition": [0.2, 0.2] },
+    "module": "recycler",
+    "teaches": "Why water recycling is critical",
+    "text": {
+      "forecast": "",
+      "start": "A clogged filter dropped the water recycler to 20% of normal.",
+      "effect": "Most used water is lost until the recycler is repaired.",
+      "engineers": "Repair the recycler before the water tanks run low.",
+      "libraryKey": "RECYCLER_RATE_BY_LEVEL"
+    }
+  },
+  {
+    "id": "fail.battery",
+    "name": "Battery cell failure",
+    "category": "failure.battery",
+    "kind": "moduleFailure",
+    "locations": ["mars", "moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.015,
+    "durationDays": [1, 1],
+    "warningDays": 0,
+    "warningChance": 0,
+    "params": { "condition": [0.75, 0.75] },
+    "module": "battery",
+    "teaches": "Redundancy",
+    "text": {
+      "forecast": "",
+      "start": "Some battery cells failed. The battery can now hold 25% less energy.",
+      "effect": "Less energy is stored for the night.",
+      "engineers": "Repair the battery bank and reduce night-time power use.",
+      "libraryKey": "BATTERY_BASE"
+    }
+  },
+  {
+    "id": "moon.micrometeorite",
+    "name": "Micrometeorite strike",
+    "category": "failure.solar",
+    "kind": "moduleDamage",
+    "locations": ["moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.015,
+    "durationDays": [1, 1],
+    "warningDays": 0,
+    "warningChance": 0,
+    "params": { "damage": [0.2, 0.2] },
+    "module": "solar",
+    "teaches": "Risk on an airless world",
+    "text": {
+      "forecast": "",
+      "start": "A tiny meteorite cracked part of the solar array.",
+      "effect": "Solar output dropped by 20% until the panels are repaired.",
+      "engineers": "Repair the solar array. Without air, nothing slows meteorites down.",
+      "libraryKey": "SOLAR_AREA_BASE_MOON"
+    }
+  },
+  {
+    "id": "crop.disease",
+    "name": "Crop disease",
+    "category": "crop",
+    "kind": "cropDisease",
+    "locations": ["mars", "moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.02,
+    "durationDays": [4, 4],
+    "warningDays": 0,
+    "warningChance": 0,
+    "params": { "yieldMultiplier": [0.5, 0.5] },
+    "teaches": "Food diversification",
+    "text": {
+      "forecast": "",
+      "start": "A plant disease is spreading in the greenhouse.",
+      "effect": "Greenhouse food production is halved for 4 days.",
+      "engineers": "Keep packaged food as a backup. Never rely on just one food source.",
+      "libraryKey": "GH_YIELD_PER_M2"
+    }
+  },
+  {
+    "id": "crew.illness",
+    "name": "Crew illness",
+    "category": "crew",
+    "kind": "crewIllness",
+    "locations": ["mars", "moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0.02,
+    "durationDays": [2, 2],
+    "warningDays": 0,
+    "warningChance": 0,
+    "params": {},
+    "teaches": "Workforce limits",
+    "text": {
+      "forecast": "",
+      "start": "A crew member is sick and must stay in bed.",
+      "effect": "They still eat, drink and breathe, but cannot work for 2 days.",
+      "engineers": "Move other crew to the most important jobs.",
+      "libraryKey": "MEDIC_RECOVERY_BONUS"
+    }
+  },
+  {
+    "id": "resupply",
+    "name": "Resupply lander",
+    "category": "logistics",
+    "kind": "resupply",
+    "locations": ["mars", "moon"],
+    "difficulties": ["training", "standard", "commander"],
+    "baseProbability": 0,
+    "durationDays": [1, 1],
+    "warningDays": 3,
+    "warningChance": 1,
+    "params": { "foodKcal": [70000, 70000], "buildPoints": [20, 20] },
+    "teaches": "Logistics",
+    "text": {
+      "forecast": "A cargo lander from Earth is on its way. The landing pad must be clear of dust storms.",
+      "start": "The resupply lander touched down safely.",
+      "effect": "+70,000 kcal of food and +20 build points.",
+      "engineers": "Plan around deliveries, but never depend on them completely.",
+      "libraryKey": "START_FOOD_KCAL"
+    }
+  }
+]

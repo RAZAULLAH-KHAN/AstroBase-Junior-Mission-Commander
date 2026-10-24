@@ -1,0 +1,16 @@
+﻿{
+  "location": "mars",
+  "name": "Mars",
+  "site": "Jezero-like equatorial plain",
+  "pitch": "Thin air, cold nights and dust storms that can darken the sky for days.",
+  "facts": [
+    { "label": "Main danger", "value": "Dust storms" },
+    { "label": "Background radiation", "value": "0.64 mSv/day" },
+    { "label": "Day length", "value": "24 h 40 min (one sol)" },
+    { "label": "Night", "value": "Half of every sol" }
+  ],
+  "modules": {
+    "solar": 1, "battery": 1, "greenhouse": 1, "recycler": 1,
+    "shielding": 0, "stormShelter": 0, "cleaningBot": 0, "o2Generator": 1
+  }
+}

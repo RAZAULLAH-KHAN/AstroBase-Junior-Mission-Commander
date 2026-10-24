@@ -1,0 +1,7 @@
+[
+  { "id": "cmd", "name": "Sara Malik", "role": "commander", "defaultTask": "regolith" },
+  { "id": "eng", "name": "Omar Khan", "role": "engineer", "defaultTask": "maintenance" },
+  { "id": "bot", "name": "Zara Ali", "role": "botanist", "defaultTask": "greenhouse" },
+  { "id": "med", "name": "Lucas Moreno", "role": "medic", "defaultTask": "regolith" },
+  { "id": "sci", "name": "Mei Chen", "role": "scientist", "defaultTask": "research" }
+]

@@ -1,0 +1,7 @@
+[
+  { "id": "samples", "rewardSP": 30, "target": 3 },
+  { "id": "harvest", "rewardSP": 20, "target": 1 },
+  { "id": "storm", "rewardSP": 25, "target": 1 },
+  { "id": "lab", "rewardSP": 25, "target": 5 },
+  { "id": "drill", "rewardSP": 40, "target": 2 }
+]

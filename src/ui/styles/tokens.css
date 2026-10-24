@@ -1,0 +1,125 @@
+/* Design tokens (Doc 05 §2.1). Values are RGB channels so Tailwind can apply opacity.
+   Dark is the default mission-console theme; light is applied with <html data-theme="light">. */
+:root {
+  --bg: 11 16 32;
+  --panel: 20 27 46;
+  --panel-2: 28 37 62;
+  --panel-border: 38 48 74;
+  --text: 232 236 245;
+  --text-muted: 154 164 191;
+  --mars: 226 112 58;
+  --moon: 169 180 200;
+  --o2: 79 195 247;
+  --water: 61 139 253;
+  --food: 123 198 123;
+  --power: 255 201 74;
+  --radiation: 199 125 255;
+  --science: 94 234 212;
+  --ok: 63 185 80;
+  --warn: 242 169 59;
+  --danger: 242 85 85;
+  --info: 108 168 255;
+  --accent: var(--mars);
+  --on-accent: 11 16 32;
+  --input-border: 92 104 138;
+  --scrim: 3 6 15;
+  --hover-brightness: 1.1;
+
+  /* Base view scene (BaseView.tsx). Labels get a halo so they read on sky and ground alike. */
+  --scene-sky-top-mars: 42 26 29;
+  --scene-sky-bottom-mars: 107 58 38;
+  --scene-ground-top-mars: 154 77 44;
+  --scene-ground-bottom-mars: 92 44 24;
+  --scene-shield-mars: 124 58 29;
+  --scene-sun-mars: 246 215 176;
+  --scene-sky-top-moon: 5 7 15;
+  --scene-sky-bottom-moon: 17 24 39;
+  --scene-ground-top-moon: 107 114 128;
+  --scene-ground-bottom-moon: 55 65 81;
+  --scene-shield-moon: 75 85 99;
+  --scene-sun-moon: 255 247 214;
+  --scene-earth: 61 139 253;
+  --scene-dust: 194 65 12;
+  --scene-shadow: 0 0 0;
+  --scene-strut: 154 164 191;
+  --scene-panel: 30 58 138;
+  --scene-panel-edge: 96 165 250;
+  --scene-planned: 232 236 245;
+  --scene-casing: 31 41 55;
+  --scene-charge: 255 201 74;
+  --scene-habitat: 209 213 219;
+  --scene-habitat-edge: 154 164 191;
+  --scene-door: 55 65 81;
+  --scene-crew: 11 16 32;
+  --scene-suit: 232 236 245;
+  --scene-tank: 30 58 95;
+  --scene-shelter: 51 65 85;
+  --scene-label: 199 206 222;
+  --scene-label-strong: 255 255 255;
+  --scene-label-halo: 11 16 32;
+  color-scheme: dark;
+}
+
+/* Light theme: darker accents and status colours keep text contrast at WCAG AA on white panels. */
+:root[data-theme='light'] {
+  --bg: 241 244 250;
+  --panel: 255 255 255;
+  --panel-2: 234 238 246;
+  --panel-border: 208 215 229;
+  --text: 17 24 39;
+  --text-muted: 71 82 105;
+  --mars: 194 65 12;
+  --moon: 71 85 105;
+  --o2: 3 115 180;
+  --water: 37 99 235;
+  --food: 21 128 61;
+  --power: 161 98 7;
+  --radiation: 126 34 206;
+  --science: 13 128 120;
+  --ok: 21 128 61;
+  --warn: 180 83 9;
+  --danger: 200 30 30;
+  --info: 37 99 235;
+  --on-accent: 255 255 255;
+  --input-border: 128 140 163;
+  --scrim: 15 23 42;
+  --hover-brightness: 0.9;
+
+  /* Daytime scene: butterscotch Mars sky, pale lunar regolith, dark labels on a light halo. */
+  --scene-sky-top-mars: 236 205 172;
+  --scene-sky-bottom-mars: 222 170 128;
+  --scene-ground-top-mars: 200 118 74;
+  --scene-ground-bottom-mars: 156 82 46;
+  --scene-shield-mars: 170 88 50;
+  --scene-sun-mars: 255 250 240;
+  --scene-sky-top-moon: 51 65 85;
+  --scene-sky-bottom-moon: 100 116 139;
+  --scene-ground-top-moon: 214 220 230;
+  --scene-ground-bottom-moon: 160 172 192;
+  --scene-shield-moon: 122 136 158;
+  --scene-sun-moon: 255 247 214;
+  --scene-earth: 96 165 250;
+  --scene-dust: 180 83 40;
+  --scene-shadow: 15 23 42;
+  --scene-strut: 100 116 139;
+  --scene-panel: 30 64 175;
+  --scene-panel-edge: 30 58 138;
+  --scene-planned: 30 41 59;
+  --scene-casing: 51 65 85;
+  --scene-charge: 245 179 30;
+  --scene-habitat: 248 250 252;
+  --scene-habitat-edge: 100 116 139;
+  --scene-door: 71 85 105;
+  --scene-crew: 15 23 42;
+  --scene-suit: 255 255 255;
+  --scene-tank: 191 219 254;
+  --scene-shelter: 221 214 254;
+  --scene-label: 30 41 59;
+  --scene-label-strong: 0 0 0;
+  --scene-label-halo: 255 255 255;
+  color-scheme: light;
+}
+
+[data-location='moon'] {
+  --accent: var(--moon);
+}

@@ -1,0 +1,58 @@
+{
+  "solar": {
+    "name": "Solar Array",
+    "description": "Turns sunlight into electricity. Everything on the base depends on it.",
+    "maxLevel": 4, "costBP": 10, "buildDays": 1, "buildable": true, "repairable": true,
+    "locations": ["mars", "moon"],
+    "effect": { "mars": "+25 m² of panels (about +18 kWh on a clear sol)", "moon": "+6 m² of panels (about +26 kWh in full sunlight)" }
+  },
+  "battery": {
+    "name": "Battery Bank",
+    "description": "Stores daytime energy for the night and for dark, dusty days.",
+    "maxLevel": 4, "costBP": 12, "buildDays": 1, "buildable": true, "repairable": true,
+    "locations": ["mars", "moon"],
+    "effect": { "mars": "+40 kWh storage (powers the lab for 5 nights)", "moon": "+40 kWh storage (powers the lab for 5 nights)" }
+  },
+  "greenhouse": {
+    "name": "Greenhouse",
+    "description": "Grows fresh food under LED lights. Needs power and water. New beds take 10 days to mature.",
+    "maxLevel": 3, "costBP": 15, "buildDays": 2, "buildable": true, "repairable": false,
+    "locations": ["mars", "moon"],
+    "effect": { "mars": "+10 m² growing bed (+1,200 kcal/day when mature, +20 kWh/day light)", "moon": "+10 m² growing bed (+1,200 kcal/day when mature, +20 kWh/day light)" }
+  },
+  "recycler": {
+    "name": "Water Recycler",
+    "description": "Cleans used water so it can be used again.",
+    "maxLevel": 3, "costBP": 18, "buildDays": 2, "buildable": true, "repairable": true,
+    "locations": ["mars", "moon"],
+    "effect": { "mars": "Water recovery 85% → 93% → 98%", "moon": "Water recovery 85% → 93% → 98%" }
+  },
+  "shielding": {
+    "name": "Radiation Shielding",
+    "description": "A layer of regolith (surface soil) piled over the habitat to block radiation.",
+    "maxLevel": 3, "costBP": 14, "buildDays": 2, "buildable": true, "repairable": false,
+    "locations": ["mars", "moon"],
+    "effect": { "mars": "Background dose −15% / −30% / −40%; solar storm dose −30% / −50% / −60%", "moon": "Background dose −15% / −30% / −40%; solar storm dose −30% / −50% / −60%" }
+  },
+  "stormShelter": {
+    "name": "Storm Shelter",
+    "description": "A small room surrounded by water tanks. The crew hides here during solar storms.",
+    "maxLevel": 1, "costBP": 20, "buildDays": 3, "buildable": true, "repairable": false,
+    "locations": ["mars", "moon"],
+    "effect": { "mars": "−90% solar storm dose while the crew shelters", "moon": "−90% solar storm dose while the crew shelters" }
+  },
+  "cleaningBot": {
+    "name": "Dust Cleaning Robot",
+    "description": "Brushes Martian dust off the solar panels automatically.",
+    "maxLevel": 1, "costBP": 16, "buildDays": 1, "buildable": true, "repairable": false,
+    "locations": ["mars"],
+    "effect": { "mars": "Cleans the panels every 5 sols", "moon": "" }
+  },
+  "o2Generator": {
+    "name": "Oxygen Generator",
+    "description": "Splits water into oxygen by electrolysis. Cannot be upgraded, but can break and be repaired.",
+    "maxLevel": 1, "costBP": 0, "buildDays": 0, "buildable": false, "repairable": true,
+    "locations": ["mars", "moon"],
+    "effect": { "mars": "", "moon": "" }
+  }
+}

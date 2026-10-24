@@ -1,0 +1,72 @@
+{
+  "BVAD-2018": {
+    "title": "Life Support Baseline Values and Assumptions Document (NASA/TP-2015-218570/REV1)",
+    "authors": "Anderson, Ewert & Keener",
+    "publisher": "NASA",
+    "year": 2018,
+    "url": "https://ntrs.nasa.gov/citations/20180001338"
+  },
+  "HASSLER-2014": {
+    "title": "Mars' Surface Radiation Environment Measured with the Mars Science Laboratory's Curiosity Rover",
+    "authors": "Hassler et al.",
+    "publisher": "Science 343",
+    "year": 2014,
+    "url": "https://doi.org/10.1126/science.1244797"
+  },
+  "ZHANG-2020": {
+    "title": "First measurements of the radiation dose on the lunar surface",
+    "authors": "Zhang et al.",
+    "publisher": "Science Advances 6",
+    "year": 2020,
+    "url": "https://doi.org/10.1126/sciadv.aaz1334"
+  },
+  "NASA-STD-3001": {
+    "title": "NASA Space Flight Human-System Standard, Volume 1, Revision B",
+    "authors": "NASA Office of the Chief Health and Medical Officer",
+    "publisher": "NASA",
+    "year": 2022,
+    "url": "https://www.nasa.gov/ochmo/human-spaceflight-standards/"
+  },
+  "NASA-ISS-ECLSS-2023": {
+    "title": "NASA achieves water recovery milestone on the International Space Station",
+    "authors": "NASA",
+    "publisher": "NASA",
+    "year": 2023,
+    "url": "https://www.nasa.gov/missions/station/iss-research/nasa-achieves-water-recovery-milestone-on-international-space-station/"
+  },
+  "JPL-OPP-2018": {
+    "title": "Reports on the 2018 global dust storm and the Opportunity rover",
+    "authors": "NASA / JPL",
+    "publisher": "NASA Jet Propulsion Laboratory",
+    "year": 2018,
+    "url": "https://mars.nasa.gov/mer/mission/status_opportunityAll.html"
+  },
+  "KOPP-2011": {
+    "title": "A new, lower value of total solar irradiance: Evidence and climate significance",
+    "authors": "Kopp & Lean",
+    "publisher": "Geophysical Research Letters 38",
+    "year": 2011,
+    "url": "https://doi.org/10.1029/2010GL045777"
+  },
+  "MAZARICO-2011": {
+    "title": "Illumination conditions of the lunar polar regions using LOLA topography",
+    "authors": "Mazarico et al.",
+    "publisher": "Icarus 211",
+    "year": 2011,
+    "url": "https://doi.org/10.1016/j.icarus.2010.10.030"
+  },
+  "NASA-MARS-FACTS": {
+    "title": "Mars: Facts",
+    "authors": "NASA Science",
+    "publisher": "NASA",
+    "year": 2024,
+    "url": "https://science.nasa.gov/mars/facts/"
+  },
+  "THERMO-ELECTROLYSIS": {
+    "title": "Thermodynamics of water electrolysis (higher heating value of hydrogen, 285.8 kJ/mol H2O)",
+    "authors": "Standard thermochemical data",
+    "publisher": "Derivation",
+    "year": 2026,
+    "url": ""
+  }
+}

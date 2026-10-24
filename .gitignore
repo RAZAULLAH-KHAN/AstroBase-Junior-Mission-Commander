@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+*.local
+.vercel
+balance-results.csv
+
+# Local environment files
+.env
+.env.*
+!.env.example

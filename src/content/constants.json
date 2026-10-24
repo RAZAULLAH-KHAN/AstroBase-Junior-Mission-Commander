@@ -1,0 +1,575 @@
+{
+  "O2_PER_CREW_DAY_KG": {
+    "value": 0.82, "unit": "kg/crew-day", "kind": "REF", "category": "lifeSupport", "status": "to-verify",
+    "label": "Oxygen per astronaut per day", "sourceId": "BVAD-2018",
+    "gameNote": "Nominal metabolic oxygen use. We ignore activity changes except for EVAs.",
+    "kidText": "Each astronaut breathes about 0.82 kg of oxygen every day."
+  },
+  "WATER_DRINK_FOOD_PER_CREW_DAY_KG": {
+    "value": 2.5, "unit": "kg/crew-day", "kind": "REF", "category": "lifeSupport", "status": "to-verify",
+    "label": "Drinking and food-prep water per astronaut", "sourceId": "BVAD-2018",
+    "gameNote": "Part of the 4.0 kg daily water total used in the game.",
+    "kidText": "Each astronaut drinks or cooks with about 2.5 kg of water a day."
+  },
+  "KCAL_PER_CREW_DAY": {
+    "value": 2800, "unit": "kcal/crew-day", "kind": "REF", "category": "food", "status": "to-verify",
+    "label": "Food energy per astronaut per day", "sourceId": "BVAD-2018",
+    "gameNote": "BVAD gives a range of about 2,700 to 3,000 kcal. We use one middle value.",
+    "kidText": "An astronaut needs about 2,800 kilocalories of food energy each day."
+  },
+  "MARS_SOL_HOURS": {
+    "value": 24.66, "unit": "h", "kind": "REF", "category": "power", "status": "verified",
+    "label": "Length of a Martian day (sol)", "sourceId": "NASA-MARS-FACTS",
+    "gameNote": "One game turn on Mars is one sol.",
+    "kidText": "A day on Mars is called a sol. It is about 40 minutes longer than a day on Earth."
+  },
+  "SOLAR_CONSTANT_1AU": {
+    "value": 1361, "unit": "W/m²", "kind": "REF", "category": "power", "status": "verified",
+    "label": "Sunlight power at Earth's distance (and the Moon's)", "sourceId": "KOPP-2011",
+    "gameNote": "Used for the Moon's solar power, since the Moon has no atmosphere.",
+    "kidText": "Above the air, every square metre facing the Sun receives about 1,361 watts of sunlight."
+  },
+  "MARS_TOA_IRRADIANCE_MEAN": {
+    "value": 586, "unit": "W/m²", "kind": "REF", "category": "power", "status": "verified",
+    "label": "Average sunlight at Mars (top of atmosphere)", "sourceId": "KOPP-2011",
+    "gameNote": "Derived: 1361 / 1.524² (Mars is 1.524 times farther from the Sun than Earth).",
+    "kidText": "Mars is farther from the Sun, so its sunlight is less than half as strong as ours."
+  },
+  "MARS_SURFACE_GCR_DOSE": {
+    "value": 0.64, "unit": "mSv/day", "kind": "REF", "category": "radiation", "status": "to-verify",
+    "label": "Radiation dose on the surface of Mars", "sourceId": "HASSLER-2014",
+    "gameNote": "Measured by the RAD instrument on the Curiosity rover. Used as the daily background dose.",
+    "kidText": "Curiosity measured about 0.64 millisieverts of radiation per day on Mars."
+  },
+  "MOON_SURFACE_DOSE": {
+    "value": 1.37, "unit": "mSv/day", "kind": "REF", "category": "radiation", "status": "to-verify",
+    "label": "Radiation dose on the surface of the Moon", "sourceId": "ZHANG-2020",
+    "gameNote": "Measured by the Chang'e-4 lander. The Moon has no air or magnetic field to block radiation.",
+    "kidText": "The Moon's surface gets about twice the radiation of Mars because it has no air."
+  },
+  "NASA_CAREER_LIMIT": {
+    "value": 600, "unit": "mSv", "kind": "REF", "category": "radiation", "status": "to-verify",
+    "label": "NASA career radiation limit", "sourceId": "NASA-STD-3001",
+    "gameNote": "Our mission budgets (45 and 75 mSv) are far below this real career limit.",
+    "kidText": "NASA allows an astronaut a total of 600 millisieverts over their whole career."
+  },
+  "ISS_WATER_RECOVERY_MAX": {
+    "value": 0.98, "unit": "fraction", "kind": "REF", "category": "lifeSupport", "status": "to-verify",
+    "label": "Best water recovery on the ISS", "sourceId": "NASA-ISS-ECLSS-2023",
+    "gameNote": "Our level 3 recycler matches this value.",
+    "kidText": "The Space Station recycles about 98 out of every 100 kg of water."
+  },
+  "O2_ELECTROLYSIS_MIN_ENERGY": {
+    "value": 5.0, "unit": "kWh/kg O₂", "kind": "REF", "category": "lifeSupport", "status": "verified",
+    "label": "Minimum energy to make oxygen from water", "sourceId": "THERMO-ELECTROLYSIS",
+    "gameNote": "2 H₂O → 2 H₂ + O₂ needs about 571.6 kJ per 32 g of O₂, which is 17.9 MJ/kg or about 5.0 kWh/kg.",
+    "kidText": "Splitting water into oxygen takes at least 5 kWh of electricity for every kilogram of oxygen."
+  },
+  "OPPORTUNITY_STORM_TAU": {
+    "value": 10.8, "unit": "τ", "kind": "REF", "category": "power", "status": "to-verify",
+    "label": "Dust optical depth in the 2018 global storm", "sourceId": "JPL-OPP-2018",
+    "gameNote": "Our global dust storm uses τ between 5 and 8, which already hits our power floor.",
+    "kidText": "In 2018 a dust storm made the sky so dark that the Opportunity rover lost power forever."
+  },
+  "LUNAR_SP_ILLUMINATION_MAX": {
+    "value": 0.85, "unit": "fraction", "kind": "REF", "category": "power", "status": "to-verify",
+    "label": "Sunlit fraction at the best lunar south-pole ridges", "sourceId": "MAZARICO-2011",
+    "gameNote": "Published range is about 0.8 to 0.9. Our base starts with 0.8.",
+    "kidText": "Some ridges near the Moon's south pole are in sunlight more than 80% of the time."
+  },
+
+  "CREW_SIZE": {
+    "value": 5, "unit": "astronauts", "kind": "GAME", "category": "crew",
+    "label": "Crew size", "gameNote": "Set by the challenge framing.",
+    "kidText": "You command a crew of five."
+  },
+  "MISSION_DAYS": {
+    "value": 30, "unit": "days", "kind": "GAME", "category": "crew",
+    "label": "Mission length", "gameNote": "Set by the challenge framing. Demo mission is 7 days.",
+    "kidText": "Keep your crew safe for 30 days."
+  },
+  "O2_ENERGY_PER_KG": {
+    "value": 7.0, "unit": "kWh/kg", "kind": "GAME", "category": "lifeSupport",
+    "label": "Energy used by our oxygen generator", "gameNote": "Minimum 5.0 kWh/kg divided by about 70% machine efficiency.",
+    "kidText": "Real machines waste some energy, so our oxygen maker uses 7 kWh per kilogram."
+  },
+  "O2_GEN_CAPACITY": {
+    "value": 5.0, "unit": "kg/day", "kind": "GAME", "category": "lifeSupport",
+    "label": "Oxygen generator capacity", "gameNote": "Slightly above the crew's need of 4.1 kg/day.",
+    "kidText": "The oxygen maker can produce up to 5 kg a day — just a little more than the crew breathes."
+  },
+  "O2_TANK_MAX": {
+    "value": 60, "unit": "kg", "kind": "GAME", "category": "lifeSupport",
+    "label": "Oxygen tank size", "gameNote": "About 14 days of breathing for 5 astronauts.",
+    "kidText": "The oxygen tanks hold up to 60 kg, about two weeks of air."
+  },
+  "O2_EVA_EXTRA_KG": {
+    "value": 0.3, "unit": "kg/crew-EVA", "kind": "GAME", "category": "lifeSupport",
+    "label": "Extra oxygen per astronaut on a spacewalk", "gameNote": "Hard work outside uses more oxygen.",
+    "kidText": "Working outside in a spacesuit makes astronauts breathe harder."
+  },
+  "LIFE_SUPPORT_BASE": {
+    "value": 6, "unit": "kWh/day", "kind": "GAME", "category": "lifeSupport",
+    "label": "Life support base power", "gameNote": "Fans, CO₂ scrubbers and sensors.",
+    "kidText": "Fans and air cleaners need power all day, even before making oxygen."
+  },
+  "EVA_SUIT_ENERGY": {
+    "value": 3, "unit": "kWh/EVA", "kind": "GAME", "category": "science",
+    "label": "Spacesuit recharge energy", "gameNote": "Added to life support demand on EVA days.",
+    "kidText": "Spacesuit batteries must be recharged after every spacewalk."
+  },
+  "DRILL_ENERGY": {
+    "value": 5, "unit": "kWh/EVA", "kind": "GAME", "category": "science",
+    "label": "Drill power per drilling EVA", "gameNote": "Two drilling EVAs use 10 kWh in total.",
+    "kidText": "Drilling into the ground for ice or samples takes extra power."
+  },
+  "THERMAL_DEMAND_MARS": {
+    "value": 12, "unit": "kWh/day", "kind": "GAME", "category": "power",
+    "label": "Heating power (Mars)", "gameNote": "Simplified average heating load.",
+    "kidText": "Mars nights are freezing, so the base needs heating."
+  },
+  "THERMAL_DEMAND_MOON": {
+    "value": 18, "unit": "kWh/day", "kind": "GAME", "category": "power",
+    "label": "Heating power (Moon)", "gameNote": "The lunar pole is colder, so heating costs more.",
+    "kidText": "Near the Moon's south pole it is even colder, so heating needs more power."
+  },
+  "WATER_TOTAL_PER_CREW_DAY": {
+    "value": 4.0, "unit": "kg/crew-day", "kind": "GAME", "category": "lifeSupport",
+    "label": "Total water use per astronaut", "gameNote": "Drinking and food 2.5 kg plus hygiene 1.5 kg (simplified).",
+    "kidText": "Each astronaut uses about 4 kg of water a day for drinking, cooking and washing."
+  },
+  "WATER_PROCESS_ENERGY": {
+    "value": 0.5, "unit": "kWh/kg", "kind": "GAME", "category": "lifeSupport",
+    "label": "Water recycler energy", "gameNote": "Simplified energy per kg of wastewater.",
+    "kidText": "Cleaning used water takes electricity."
+  },
+  "RECYCLER_CAPACITY_KG_DAY": {
+    "value": 40, "unit": "kg/day", "kind": "GAME", "category": "lifeSupport",
+    "label": "Water recycler processing capacity", "gameNote": "Twice the crew's daily use, so a backlog can be caught up after a power cut.",
+    "kidText": "The recycler can clean up to 40 kg of used water a day, so it can catch up after a storm."
+  },
+  "WASTEWATER_TANK_MAX": {
+    "value": 120, "unit": "kg", "kind": "GAME", "category": "lifeSupport",
+    "label": "Wastewater holding tank", "gameNote": "Used water waits here when the recycler has no power. Overflow is lost.",
+    "kidText": "Used water is stored in a tank until the recycler has power to clean it."
+  },
+  "RECYCLER_RATE_BY_LEVEL": {
+    "value": [0.85, 0.93, 0.98], "unit": "fraction (level 1 / 2 / 3)", "kind": "GAME", "category": "lifeSupport",
+    "label": "Water recovered by recycler level", "gameNote": "Trend toward the ISS value of 98%.",
+    "kidText": "Better recyclers save more water. The best one recovers 98%."
+  },
+  "GH_AREA_PER_LEVEL": {
+    "value": 10, "unit": "m²/level", "kind": "GAME", "category": "food",
+    "label": "Greenhouse growing area per level", "gameNote": "Each greenhouse level adds one 10 m² growing bed.",
+    "kidText": "Each greenhouse upgrade adds 10 square metres of plants."
+  },
+  "GH_LIGHT_ENERGY_PER_M2": {
+    "value": 2.0, "unit": "kWh/m²/day", "kind": "GAME", "category": "food",
+    "label": "Greenhouse lighting energy", "gameNote": "LED grow lights (simplified).",
+    "kidText": "Plants indoors need bright lamps, and lamps need power."
+  },
+  "GH_YIELD_PER_M2": {
+    "value": 120, "unit": "kcal/m²/day", "kind": "GAME", "category": "food",
+    "label": "Greenhouse food yield", "gameNote": "Mature crops under full light.",
+    "kidText": "One square metre of grown plants gives about 120 kcal of food a day."
+  },
+  "GH_NET_WATER_PER_M2": {
+    "value": 0.15, "unit": "kg/m²/day", "kind": "GAME", "category": "food",
+    "label": "Greenhouse water use", "gameNote": "Net loss only: a closed greenhouse condenses and reuses most of the water plants transpire. Balanced from 0.3 so a full greenhouse does not outweigh the crew's own water use.",
+    "kidText": "Plants drink water too, although most of it is recycled."
+  },
+  "GH_MATURITY_DAYS": {
+    "value": 10, "unit": "days", "kind": "GAME", "category": "food",
+    "label": "Days for crops to mature", "gameNote": "Fast crops such as lettuce and radish (simplified).",
+    "kidText": "Fast-growing plants like lettuce are ready in about 10 days in our game."
+  },
+  "START_GH_MATURITY": {
+    "value": 0.5, "unit": "fraction", "kind": "GAME", "category": "food",
+    "label": "Starting crop maturity", "gameNote": "The first bed was planted before the mission starts.",
+    "kidText": "Your first plants are already half grown when you arrive."
+  },
+  "BOTANIST_YIELD_BONUS": {
+    "value": 0.10, "unit": "fraction", "kind": "GAME", "category": "crew",
+    "label": "Botanist greenhouse bonus", "gameNote": "Applies when the Botanist works in the greenhouse.",
+    "kidText": "A plant expert in the greenhouse grows 10% more food."
+  },
+  "LAB_DEMAND": {
+    "value": 8, "unit": "kWh/day", "kind": "GAME", "category": "science",
+    "label": "Science lab power", "gameNote": "At 100% lab power.",
+    "kidText": "Experiments need power for instruments and computers."
+  },
+  "LAB_SP_PER_DAY": {
+    "value": 5, "unit": "SP/day", "kind": "GAME", "category": "science",
+    "label": "Science points from the lab", "gameNote": "Needs at least one crew member on Research.",
+    "kidText": "A powered lab with a researcher earns science points every day."
+  },
+  "SCIENTIST_SP_BONUS": {
+    "value": 0.15, "unit": "fraction", "kind": "GAME", "category": "crew",
+    "label": "Scientist science bonus", "gameNote": "Applies to lab work and EVAs the Scientist joins.",
+    "kidText": "Your Scientist earns 15% more science points."
+  },
+  "EVA_SP": {
+    "value": 10, "unit": "SP/EVA", "kind": "GAME", "category": "science",
+    "label": "Science points per EVA", "gameNote": "One EVA uses two crew members for one day.",
+    "kidText": "Every spacewalk brings back samples worth science points."
+  },
+  "EVA_MAX_TAU": {
+    "value": 2, "unit": "τ", "kind": "GAME", "category": "science",
+    "label": "Dust limit for EVAs", "gameNote": "EVAs are blocked when the sky is too dusty.",
+    "kidText": "It is not safe to walk outside in a thick dust storm."
+  },
+  "EVA_MIN_HEALTH": {
+    "value": 50, "unit": "health", "kind": "GAME", "category": "crew",
+    "label": "Minimum health for EVAs", "gameNote": "Crew below this health cannot go outside.",
+    "kidText": "Only healthy astronauts may go on spacewalks."
+  },
+  "SOLAR_AREA_BASE_MARS": {
+    "value": 120, "unit": "m²", "kind": "GAME", "category": "power",
+    "label": "Starting solar panel area (Mars)", "gameNote": "Level 1 array.",
+    "kidText": "Your Mars base starts with 120 square metres of solar panels."
+  },
+  "SOLAR_AREA_PER_LEVEL_MARS": {
+    "value": 25, "unit": "m²/level", "kind": "GAME", "category": "power",
+    "label": "Extra solar area per upgrade (Mars)", "gameNote": "Each upgrade adds 25 m².",
+    "kidText": "Each solar upgrade adds 25 square metres of panels."
+  },
+  "SOLAR_AREA_BASE_MOON": {
+    "value": 20, "unit": "m²", "kind": "GAME", "category": "power",
+    "label": "Starting solar panel area (Moon)", "gameNote": "Moon panels see stronger sunlight for longer.",
+    "kidText": "On the Moon, sunlight is much stronger, so fewer panels are needed."
+  },
+  "SOLAR_AREA_PER_LEVEL_MOON": {
+    "value": 6, "unit": "m²/level", "kind": "GAME", "category": "power",
+    "label": "Extra solar area per upgrade (Moon)", "gameNote": "Each upgrade adds 6 m².",
+    "kidText": "Each solar upgrade on the Moon adds 6 square metres of panels."
+  },
+  "PANEL_EFFICIENCY": {
+    "value": 0.28, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Solar cell efficiency", "gameNote": "Modern space-grade cells reach about 28 to 30%.",
+    "kidText": "Solar cells turn about 28% of sunlight into electricity."
+  },
+  "SYSTEM_LOSSES": {
+    "value": 0.85, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Electrical system efficiency", "gameNote": "Wiring, temperature and conversion losses.",
+    "kidText": "Some electricity is lost as heat in wires and converters."
+  },
+  "MARS_CLEAR_INSOLATION": {
+    "value": 3.0, "unit": "kWh/m²/sol", "kind": "GAME", "category": "power",
+    "label": "Daily sunlight on a clear Martian day", "gameNote": "Equatorial clear-sky approximation, still to verify against Mars weather data.",
+    "kidText": "On a clear day, each square metre on Mars gets about 3 kWh of sunlight."
+  },
+  "MARS_CLEAR_TAU": {
+    "value": 0.5, "unit": "τ", "kind": "GAME", "category": "power",
+    "label": "Normal dust level of the Martian sky", "gameNote": "Clear-season optical depth.",
+    "kidText": "Even a clear Martian sky has a little dust in it."
+  },
+  "MARS_TAU_DAILY_VARIATION": {
+    "value": 0.3, "unit": "τ", "kind": "GAME", "category": "power",
+    "label": "Daily change in sky dust", "gameNote": "Clear days vary between τ 0.5 and 0.8.",
+    "kidText": "The amount of dust in the sky changes a little every day."
+  },
+  "DUST_SKY_COEFF": {
+    "value": 0.4, "unit": "1/τ", "kind": "GAME", "category": "power",
+    "label": "Dust dimming factor", "gameNote": "Fit: sunlight = exp(−0.4 × (τ − 0.5)), equal to 1.0 on a clear day.",
+    "kidText": "The dustier the sky, the less sunlight reaches the panels."
+  },
+  "DUST_SKY_FLOOR": {
+    "value": 0.10, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Minimum sunlight in a global storm", "gameNote": "Panels never drop below 10% output.",
+    "kidText": "Even in the worst storm, a little light still gets through."
+  },
+  "DUST_ACCUM_PER_SOL": {
+    "value": 0.002, "unit": "fraction/sol", "kind": "GAME", "category": "power",
+    "label": "Dust settling on panels", "gameNote": "About 0.2% output loss per sol, similar to rover trends.",
+    "kidText": "Dust slowly settles on the panels and makes them weaker."
+  },
+  "DUST_STORM_DEPOSIT_PER_SOL": {
+    "value": 0.01, "unit": "fraction/sol", "kind": "GAME", "category": "power",
+    "label": "Extra dust on panels during storms", "gameNote": "Storms drop dust five times faster.",
+    "kidText": "Dust storms cover the panels much faster."
+  },
+  "CLEANING_BOT_INTERVAL": {
+    "value": 5, "unit": "sols", "kind": "GAME", "category": "power",
+    "label": "Cleaning robot schedule", "gameNote": "The robot cleans the panels every 5 sols.",
+    "kidText": "A cleaning robot brushes the panels every 5 sols."
+  },
+  "MOON_GEOMETRY_FACTOR": {
+    "value": 0.7, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Low sun angle at the lunar pole", "gameNote": "Tracking panels with a low Sun on the horizon.",
+    "kidText": "At the Moon's pole the Sun stays low in the sky."
+  },
+  "MOON_BASE_ILLUMINATION": {
+    "value": 0.8, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Normal sunlit fraction of the day (Moon)", "gameNote": "Based on the best polar ridges.",
+    "kidText": "Your Moon base is in sunlight 80% of the time."
+  },
+  "HOURS_PER_DAY": {
+    "value": 24, "unit": "h", "kind": "GAME", "category": "power",
+    "label": "Hours in a game day (Moon)", "gameNote": "Moon turns use Earth days.",
+    "kidText": "On the Moon, one turn is one Earth day of 24 hours."
+  },
+  "BATTERY_BASE": {
+    "value": 60, "unit": "kWh", "kind": "GAME", "category": "power",
+    "label": "Starting battery size", "gameNote": "Level 1 battery bank.",
+    "kidText": "Your battery stores 60 kWh to use at night."
+  },
+  "BATTERY_PER_LEVEL": {
+    "value": 40, "unit": "kWh/level", "kind": "GAME", "category": "power",
+    "label": "Extra battery per upgrade", "gameNote": "Each upgrade adds 40 kWh.",
+    "kidText": "Each battery upgrade stores 40 kWh more."
+  },
+  "BATTERY_EFF_IN": {
+    "value": 0.95, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Battery charging efficiency", "gameNote": "About 90% round trip together with discharge.",
+    "kidText": "A little energy is lost when charging a battery."
+  },
+  "BATTERY_EFF_OUT": {
+    "value": 0.95, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Battery discharging efficiency", "gameNote": "About 90% round trip together with charging.",
+    "kidText": "A little energy is lost when using a battery too."
+  },
+  "MARS_NIGHT_FRACTION": {
+    "value": 0.5, "unit": "fraction", "kind": "GAME", "category": "power",
+    "label": "Share of the day without sunlight (Mars)", "gameNote": "Half of the daily load must come from the battery.",
+    "kidText": "Half of every sol is night, so the base runs on its battery."
+  },
+  "SHIELD_GCR_REDUCTION": {
+    "value": [0, 0.15, 0.30, 0.40], "unit": "fraction (level 0 to 3)", "kind": "GAME", "category": "radiation",
+    "label": "Background radiation blocked by shielding", "gameNote": "Cosmic rays are hard to block, so each level helps less.",
+    "kidText": "Piling soil on the base blocks some cosmic rays, but never all of them."
+  },
+  "SHIELD_SPE_REDUCTION": {
+    "value": [0, 0.30, 0.50, 0.60], "unit": "fraction (level 0 to 3)", "kind": "GAME", "category": "radiation",
+    "label": "Solar storm radiation blocked by shielding", "gameNote": "Solar protons are easier to stop than cosmic rays.",
+    "kidText": "Shielding works better against solar storms than against cosmic rays."
+  },
+  "SHELTER_SPE_REDUCTION": {
+    "value": 0.90, "unit": "fraction", "kind": "GAME", "category": "radiation",
+    "label": "Storm shelter protection", "gameNote": "A small room surrounded by water tanks.",
+    "kidText": "Hiding in the storm shelter blocks 90% of a solar storm's radiation."
+  },
+  "SPE_DOSE_UNSHIELDED_MARS": {
+    "value": 25, "unit": "mSv/event-day", "kind": "GAME", "category": "radiation",
+    "label": "Solar storm dose (Mars)", "gameNote": "The Martian atmosphere gives partial protection.",
+    "kidText": "On Mars, the thin air blocks part of a solar storm."
+  },
+  "SPE_DOSE_UNSHIELDED_MOON": {
+    "value": 60, "unit": "mSv/event-day", "kind": "GAME", "category": "radiation",
+    "label": "Solar storm dose (Moon)", "gameNote": "No atmosphere on the Moon.",
+    "kidText": "On the Moon nothing blocks a solar storm, so shelters are vital."
+  },
+  "MISSION_DOSE_BUDGET_MARS": {
+    "value": 45, "unit": "mSv avg/crew", "kind": "GAME", "category": "radiation",
+    "label": "Mission radiation budget (Mars)", "gameNote": "Game budget, far below the 600 mSv career limit.",
+    "kidText": "Keep each astronaut's average dose under 45 mSv on Mars."
+  },
+  "MISSION_DOSE_BUDGET_MOON": {
+    "value": 75, "unit": "mSv avg/crew", "kind": "GAME", "category": "radiation",
+    "label": "Mission radiation budget (Moon)", "gameNote": "Game budget, far below the 600 mSv career limit.",
+    "kidText": "Keep each astronaut's average dose under 75 mSv on the Moon."
+  },
+  "SPE_HEALTH_DOSE_THRESHOLD": {
+    "value": 20, "unit": "mSv/day", "kind": "GAME", "category": "radiation",
+    "label": "Daily dose that harms health", "gameNote": "Real radiation sickness needs hundreds of mSv at once. This penalty is a game simplification to show that solar storms are dangerous and that shelters work.",
+    "kidText": "In the game, a big solar storm dose makes astronauts feel unwell."
+  },
+  "BP_INCOME_BASE": {
+    "value": 4, "unit": "BP/day", "kind": "GAME", "category": "crew",
+    "label": "Daily build points", "gameNote": "Spare parts and processed soil.",
+    "kidText": "The base makes 4 build points every day."
+  },
+  "BP_PER_REGOLITH_CREW": {
+    "value": 3, "unit": "BP/crew-day", "kind": "GAME", "category": "crew",
+    "label": "Build points per regolith worker", "gameNote": "Regolith is the loose rock and dust on the surface.",
+    "kidText": "Each astronaut processing soil adds 3 build points a day."
+  },
+  "START_O2_KG": {
+    "value": 40, "unit": "kg", "kind": "GAME", "category": "lifeSupport",
+    "label": "Starting oxygen", "gameNote": "Standard difficulty.",
+    "kidText": "You start with 40 kg of oxygen in the tanks."
+  },
+  "START_WATER_MARS": {
+    "value": 300, "unit": "kg", "kind": "GAME", "category": "lifeSupport",
+    "label": "Starting water (Mars)", "gameNote": "Standard difficulty.",
+    "kidText": "Your Mars base starts with 300 kg of water."
+  },
+  "START_WATER_MOON": {
+    "value": 250, "unit": "kg", "kind": "GAME", "category": "lifeSupport",
+    "label": "Starting water (Moon)", "gameNote": "Less water is carried to the Moon because polar ice can be mined.",
+    "kidText": "Your Moon base starts with 250 kg of water, but there is ice nearby."
+  },
+  "START_FOOD_KCAL": {
+    "value": 336000, "unit": "kcal", "kind": "GAME", "category": "food",
+    "label": "Starting food", "gameNote": "80% of the crew's 30-day need. The greenhouse must make up the rest.",
+    "kidText": "You brought 80% of the food you need. Your greenhouse has to grow the rest."
+  },
+  "START_BP": {
+    "value": 40, "unit": "BP", "kind": "GAME", "category": "crew",
+    "label": "Starting build points", "gameNote": "Same on every difficulty.",
+    "kidText": "You start with 40 build points for upgrades."
+  },
+  "DIFFICULTY_RESERVE_MULTIPLIER": {
+    "value": [1.5, 1.0, 0.85], "unit": "Training / Standard / Commander", "kind": "GAME", "category": "rules",
+    "label": "Starting supplies by difficulty", "gameNote": "Applied to starting oxygen, water and food. Build points are the same on every difficulty.",
+    "kidText": "Training gives you extra supplies. Commander gives you less."
+  },
+  "EVENT_FREQUENCY_MULTIPLIER": {
+    "value": [0.5, 1.0, 1.25], "unit": "Training / Standard / Commander", "kind": "GAME", "category": "rules",
+    "label": "Event frequency by difficulty", "gameNote": "Multiplies the daily chance of every random event.",
+    "kidText": "Harder missions bring more surprises."
+  },
+  "HEALTH_O2_PENALTY": {
+    "value": 25, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Health lost without enough air", "gameNote": "Applies when oxygen runs short.",
+    "kidText": "Without enough air, astronauts quickly become unwell."
+  },
+  "HEALTH_WATER_PENALTY": {
+    "value": 10, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Health lost without enough water", "gameNote": "Applies when water is rationed.",
+    "kidText": "Not drinking enough water makes astronauts weak."
+  },
+  "HEALTH_FOOD_SEVERE_PENALTY": {
+    "value": 8, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Health lost with less than half rations", "gameNote": "Applies when less than half the food need is eaten.",
+    "kidText": "Eating less than half the food you need is very bad for health."
+  },
+  "HEALTH_FOOD_MILD_PENALTY": {
+    "value": 3, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Health lost with reduced rations", "gameNote": "Applies when some food is missing.",
+    "kidText": "Smaller meals make astronauts tired."
+  },
+  "HEALTH_THERMAL_PENALTY": {
+    "value": 5, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Health lost when heating is cut", "gameNote": "Scaled by how much heating was missing.",
+    "kidText": "A cold base makes the crew unwell."
+  },
+  "HEALTH_SPE_PENALTY": {
+    "value": 15, "unit": "health", "kind": "GAME", "category": "radiation",
+    "label": "Health lost after a big solar storm dose", "gameNote": "Game simplification; see the daily dose that harms health.",
+    "kidText": "A big dose from a solar storm makes astronauts feel ill."
+  },
+  "HEALTH_RECOVERY": {
+    "value": 3, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Daily recovery when all needs are met", "gameNote": "Plus bonuses from the Medic and rest.",
+    "kidText": "Well-fed, rested astronauts slowly get healthier."
+  },
+  "MEDIC_RECOVERY_BONUS": {
+    "value": 2, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Medic recovery bonus", "gameNote": "While the Medic is active.",
+    "kidText": "The Medic helps everyone recover faster."
+  },
+  "REST_RECOVERY_BONUS": {
+    "value": 2, "unit": "health/day", "kind": "GAME", "category": "crew",
+    "label": "Rest recovery bonus", "gameNote": "For crew assigned to Rest.",
+    "kidText": "A day of rest helps an astronaut recover."
+  },
+  "FOOD_SEVERE_RATION": {
+    "value": 0.5, "unit": "fraction", "kind": "GAME", "category": "food",
+    "label": "Severe food shortage level", "gameNote": "Three days below this ends the mission.",
+    "kidText": "If the crew eats less than half their food for 3 days, the mission ends."
+  },
+  "FOOD_FAIL_STREAK": {
+    "value": 3, "unit": "days", "kind": "GAME", "category": "food",
+    "label": "Days of severe food shortage allowed", "gameNote": "Consecutive days.",
+    "kidText": "The crew can survive only a few days of very low food."
+  },
+  "REPAIR_COST_BP": {
+    "value": 5, "unit": "BP", "kind": "GAME", "category": "crew",
+    "label": "Repair cost", "gameNote": "Spare parts for one repair.",
+    "kidText": "Fixing broken equipment uses spare parts."
+  },
+  "REPAIR_DAYS": {
+    "value": 2, "unit": "days", "kind": "GAME", "category": "crew",
+    "label": "Repair time", "gameNote": "Without an Engineer on Maintenance.",
+    "kidText": "A repair normally takes 2 days."
+  },
+  "REPAIR_DAYS_ENGINEER": {
+    "value": 1, "unit": "days", "kind": "GAME", "category": "crew",
+    "label": "Repair time with the Engineer", "gameNote": "Engineer assigned to Maintenance.",
+    "kidText": "Your Engineer can fix things in 1 day."
+  },
+  "REPAIR_SUCCESS_BASE": {
+    "value": 0.9, "unit": "chance", "kind": "GAME", "category": "crew",
+    "label": "Repair success chance", "gameNote": "A failed attempt adds one more day.",
+    "kidText": "Most repairs work the first time, but not always."
+  },
+  "COMMANDER_REPAIR_BONUS": {
+    "value": 0.05, "unit": "chance", "kind": "GAME", "category": "crew",
+    "label": "Commander repair bonus", "gameNote": "While the Commander is active.",
+    "kidText": "A good commander makes repairs go more smoothly."
+  },
+  "ICE_WATER_KG": {
+    "value": 60, "unit": "kg", "kind": "GAME", "category": "science",
+    "label": "Water from lunar ice prospecting", "gameNote": "Reward for completing the Moon drilling objective.",
+    "kidText": "Ice at the Moon's poles can be melted into drinking water."
+  },
+  "MAX_EVACUATIONS": {
+    "value": 2, "unit": "crew", "kind": "GAME", "category": "rules",
+    "label": "Evacuations allowed", "gameNote": "Three or more evacuations end the mission.",
+    "kidText": "If 3 astronauts must be sent home, the mission ends."
+  },
+  "ALERT_AMBER_DAYS": {
+    "value": 7, "unit": "days", "kind": "GAME", "category": "rules",
+    "label": "Warning alert threshold", "gameNote": "A resource lasting fewer days shows a warning.",
+    "kidText": "You get a warning when something will run out within a week."
+  },
+  "ALERT_RED_DAYS": {
+    "value": 3, "unit": "days", "kind": "GAME", "category": "rules",
+    "label": "Critical alert threshold", "gameNote": "A resource lasting fewer days is critical.",
+    "kidText": "Critical alerts mean something runs out in less than 3 days."
+  },
+  "BATTERY_LOW_FRACTION": {
+    "value": 0.10, "unit": "fraction", "kind": "GAME", "category": "rules",
+    "label": "Low battery alert", "gameNote": "Battery below 10% at the end of the day.",
+    "kidText": "An almost empty battery at sunrise means the night was too long for it."
+  },
+  "BATTERY_WASTE_KWH": {
+    "value": 20, "unit": "kWh", "kind": "GAME", "category": "rules",
+    "label": "Wasted solar energy alert", "gameNote": "Energy that could not be stored because the battery was full.",
+    "kidText": "If the battery is full, extra sunshine is wasted."
+  },
+  "HEALTH_AMBER": {
+    "value": 50, "unit": "health", "kind": "GAME", "category": "rules",
+    "label": "Low health warning", "gameNote": "", "kidText": "A warning appears if someone's health falls below 50."
+  },
+  "HEALTH_RED": {
+    "value": 30, "unit": "health", "kind": "GAME", "category": "rules",
+    "label": "Critical health alert", "gameNote": "", "kidText": "Below 30 health, an astronaut is in danger."
+  },
+  "DOSE_AMBER_FRACTION": {
+    "value": 0.6, "unit": "of budget", "kind": "GAME", "category": "rules",
+    "label": "Radiation warning", "gameNote": "Average dose above 60% of the mission budget.",
+    "kidText": "A warning appears when the crew has used 60% of its radiation budget."
+  },
+  "DOSE_RED_FRACTION": {
+    "value": 0.8, "unit": "of budget", "kind": "GAME", "category": "rules",
+    "label": "Radiation critical alert", "gameNote": "Average dose above 80% of the mission budget.",
+    "kidText": "At 80% of the radiation budget, the crew must be protected."
+  },
+  "MODULE_DOWN_CONDITION": {
+    "value": 0.5, "unit": "condition", "kind": "GAME", "category": "rules",
+    "label": "Broken equipment alert", "gameNote": "Equipment below 50% condition.",
+    "kidText": "Equipment working at less than half strength needs a repair."
+  },
+  "SCORE_PER_DAY": {
+    "value": 10, "unit": "points/day", "kind": "GAME", "category": "rules",
+    "label": "Score per day survived", "gameNote": "", "kidText": "Every day you survive earns 10 points."
+  },
+  "SCORE_EVAC_PENALTY": {
+    "value": 50, "unit": "points", "kind": "GAME", "category": "rules",
+    "label": "Score lost per evacuation", "gameNote": "", "kidText": "Sending an astronaut home costs 50 points."
+  },
+  "SCORE_LS_SHED_PENALTY": {
+    "value": 15, "unit": "points/day", "kind": "GAME", "category": "rules",
+    "label": "Score lost per day life support was cut", "gameNote": "",
+    "kidText": "Each day life support does not get full power costs 15 points."
+  },
+  "SCORE_STAR_2": {
+    "value": 450, "unit": "points", "kind": "GAME", "category": "rules",
+    "label": "Score for 2 stars", "gameNote": "", "kidText": "Score 450 or more for 2 stars."
+  },
+  "SCORE_STAR_3": {
+    "value": 600, "unit": "points", "kind": "GAME", "category": "rules",
+    "label": "Score for 3 stars", "gameNote": "", "kidText": "Score 600 or more for 3 stars."
+  }
+}
