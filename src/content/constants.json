@@ -418,6 +418,12 @@
     "label": "Event frequency by difficulty", "gameNote": "Multiplies the daily chance of every random event.",
     "kidText": "Harder missions bring more surprises."
   },
+  "SUN_ACTIVITY_SPE_MULTIPLIER": {
+    "value": [0.5, 1.0, 2.0], "unit": "Quiet / Active / Stormy", "kind": "GAME", "category": "radiation",
+    "label": "Solar particle event chance by sun activity", "sourceId": "NASA-DONKI",
+    "gameNote": "The sun level comes from real NASA DONKI records (solar particle events and coronal mass ejections). Active keeps the normal chance; the multiplier itself is our simplification.",
+    "kidText": "When NASA sees a busy Sun, solar storms become more likely in your mission."
+  },
   "HEALTH_O2_PENALTY": {
     "value": 25, "unit": "health/day", "kind": "GAME", "category": "crew",
     "label": "Health lost without enough air", "gameNote": "Applies when oxygen runs short.",

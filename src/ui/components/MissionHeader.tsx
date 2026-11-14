@@ -5,6 +5,8 @@ import { Button } from './Button';
 import { Wordmark } from './SiteLayout';
 import { ThemeToggle } from './ThemeToggle';
 
+const SUN_NAMES = { quiet: 'Quiet', active: 'Active', stormy: 'Stormy' } as const;
+
 interface MissionHeaderProps {
   view: MissionView;
   onHistory: () => void;
@@ -61,6 +63,10 @@ export function MissionHeader({
           {mars ? 'Mars' : 'Moon'} ·{' '}
           {game.config.difficulty[0].toUpperCase() + game.config.difficulty.slice(1)}
           {game.config.demo ? ' · Demo' : ''}
+          {' · '}
+          <span title={game.config.sunSource ?? 'Normal sun activity'}>
+            Sun: {SUN_NAMES[game.config.sunActivity ?? 'active']}
+          </span>
         </span>
         <div className="flex flex-wrap items-center gap-2" id="weather" data-tutorial="weather">
           <Chip
@@ -69,8 +75,8 @@ export function MissionHeader({
           />
           <Chip label={mars ? 'Sky' : 'Sun'} value={sky} tone={storm ? 'text-warn' : undefined} />
           <Chip
-            label="Solar activity"
-            value={speActive ? 'Particle event' : speSoon ? 'Elevated' : 'Quiet'}
+            label="Particle storm"
+            value={speActive ? 'Hitting base' : speSoon ? 'Forecast' : 'None'}
             tone={speActive ? 'text-danger' : speSoon ? 'text-warn' : undefined}
           />
           <Chip label="Science" value={`${Math.round(game.science.points)} SP`} tone="text-science" />

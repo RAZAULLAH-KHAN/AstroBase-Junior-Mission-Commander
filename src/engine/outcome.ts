@@ -1,4 +1,4 @@
-// Win/lose conditions, score, stars and the debrief "turning point" (Doc 02 §5–6, Doc 04 §8.4; pipeline step 17).
+// Win/lose conditions, score, stars and the debrief "turning point".
 import { k } from './constants';
 import { averageDoseMSv, averageHealth, doseBudgetMSv } from './helpers';
 import type { DaySnapshot, FailureReason, GameState, Outcome } from './types';

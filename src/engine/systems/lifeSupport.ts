@@ -1,4 +1,4 @@
-// Oxygen production and use (Doc 04 §6.1; pipeline step 8).
+// Oxygen production and use.
 import { k } from '../constants';
 import { addLink, findLink, type TickContext } from '../context';
 import { copy, fill, fmt } from '../copy';

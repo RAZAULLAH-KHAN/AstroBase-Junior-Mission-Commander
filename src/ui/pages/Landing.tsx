@@ -35,7 +35,7 @@ export function LandingPage() {
 
   useEffect(() => setSaved(hasSave()), []);
 
-  // Teacher links of the form /?seed=…&loc=…&diff=… open the mission setup (Doc 02 F-14).
+  // Teacher links of the form /?seed=…&loc=…&diff=… open the mission setup.
   if (params.get('seed') || params.get('loc') || params.get('diff')) {
     return <Navigate to={`/setup?${params.toString()}`} replace />;
   }

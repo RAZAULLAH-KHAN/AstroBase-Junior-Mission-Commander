@@ -1,0 +1,126 @@
+{
+  "note": "Recorded NASA DONKI space-weather records, downloaded 2026-11-14 from api.nasa.gov/DONKI. These are past records, not live data.",
+  "snapshots": [
+    {
+      "id": "recent-2026",
+      "label": "Last 60 days before the hackathon",
+      "range": [
+        "2026-09-15",
+        "2026-11-13"
+      ],
+      "sepCount": 0,
+      "goesSep": [],
+      "cmeCount": 174,
+      "gst": [
+        {
+          "id": "2026-10-04T18:00:00-GST-001",
+          "time": "2026-10-04T18:00Z",
+          "maxKp": 5.67,
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/GST/48966/-1"
+        },
+        {
+          "id": "2026-10-10T15:00:00-GST-001",
+          "time": "2026-10-10T15:00Z",
+          "maxKp": 7,
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/GST/49066/-1"
+        },
+        {
+          "id": "2026-10-31T18:00:00-GST-001",
+          "time": "2026-10-31T18:00Z",
+          "maxKp": 6,
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/GST/49348/-1"
+        }
+      ],
+      "summary": "DONKI lists no solar particle events, but the Sun launched 174 coronal mass ejections (clouds of gas thrown into space) and caused 3 magnetic storms at Earth."
+    },
+    {
+      "id": "may-2024",
+      "label": "May 2024 solar storms",
+      "range": [
+        "2024-04-20",
+        "2024-06-18"
+      ],
+      "sepCount": 27,
+      "goesSep": [
+        {
+          "id": "2024-05-10T13:35:00-SEP-001",
+          "time": "2024-05-10T13:35Z",
+          "instrument": "GOES-P: SEISS >10 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/30677/-1"
+        },
+        {
+          "id": "2024-05-11T02:10:00-SEP-001",
+          "time": "2024-05-11T02:10Z",
+          "instrument": "GOES-P: SEISS >100 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/30714/-1"
+        },
+        {
+          "id": "2024-05-13T14:00:00-SEP-001",
+          "time": "2024-05-13T14:00Z",
+          "instrument": "GOES-P: SEISS >10 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/30817/-1"
+        },
+        {
+          "id": "2024-06-08T02:25:00-SEP-001",
+          "time": "2024-06-08T02:25Z",
+          "instrument": "GOES-P: SEISS >100 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/31338/-1"
+        },
+        {
+          "id": "2024-06-08T02:55:00-SEP-001",
+          "time": "2024-06-08T02:55Z",
+          "instrument": "GOES-P: SEISS >10 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/31343/-1"
+        }
+      ],
+      "cmeCount": null,
+      "gst": [],
+      "summary": "One of the strongest solar storm periods in 20 years. GOES satellites recorded several proton events, including particles above 100 MeV on 11 May 2024."
+    },
+    {
+      "id": "oct-2024",
+      "label": "October 2024 solar storms",
+      "range": [
+        "2024-09-20",
+        "2024-11-18"
+      ],
+      "sepCount": 17,
+      "goesSep": [
+        {
+          "id": "2024-10-09T03:50:00-SEP-001",
+          "time": "2024-10-09T03:50Z",
+          "instrument": "GOES-P: SEISS >100 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/33868/-1"
+        },
+        {
+          "id": "2024-10-09T05:05:00-SEP-001",
+          "time": "2024-10-09T05:05Z",
+          "instrument": "GOES-P: SEISS >10 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/33866/-1"
+        },
+        {
+          "id": "2024-10-26T18:05:00-SEP-001",
+          "time": "2024-10-26T18:05Z",
+          "instrument": "GOES-P: SEISS >10 MeV",
+          "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/SEP/34222/-1"
+        }
+      ],
+      "cmeCount": null,
+      "gst": [],
+      "summary": "Near the peak of solar cycle 25. GOES recorded proton events on 9 October (above 100 MeV) and 26 October 2024."
+    },
+    {
+      "id": "jun-2019",
+      "label": "Mid-2019 solar minimum",
+      "range": [
+        "2019-06-01",
+        "2019-07-30"
+      ],
+      "sepCount": 0,
+      "goesSep": [],
+      "cmeCount": null,
+      "gst": [],
+      "summary": "The quiet bottom of the solar cycle. DONKI lists no solar particle events in these 60 days."
+    }
+  ]
+}

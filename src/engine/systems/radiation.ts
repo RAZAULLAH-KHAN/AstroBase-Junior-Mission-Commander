@@ -1,4 +1,4 @@
-// Radiation dose from background cosmic rays and solar particle events (Doc 04 §6.4; pipeline step 11).
+// Radiation dose from background cosmic rays and solar particle events.
 import { k, kAt } from '../constants';
 import { addLink, type TickContext } from '../context';
 import { copy, fill, fmt } from '../copy';

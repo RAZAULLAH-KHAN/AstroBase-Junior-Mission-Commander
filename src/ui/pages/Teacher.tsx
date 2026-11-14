@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { generateSeed, normalizeSeed, type Difficulty, type Location } from '../../engine';
 import { Button, ButtonLink } from '../components/Button';
+import { classify, DEFAULT_SNAPSHOT_ID, RECORDED_SNAPSHOTS, SUN_LEVEL_TEXT } from '../spaceWeather';
 
 const OBJECTIVES = [
   ['LO1', 'Explain why humans need oxygen, water and food in measurable amounts.'],
@@ -23,12 +24,13 @@ export function TeacherPage() {
   const [location, setLocation] = useState<Location>('mars');
   const [difficulty, setDifficulty] = useState<Difficulty>('training');
   const [seed, setSeed] = useState(() => generateSeed('MARS'));
+  const [sun, setSun] = useState(DEFAULT_SNAPSHOT_ID);
   const [copied, setCopied] = useState<'idle' | 'done' | 'failed'>('idle');
 
   const link = useMemo(() => {
-    const params = new URLSearchParams({ seed: normalizeSeed(seed), loc: location, diff: difficulty });
-    return `${window.location.origin}/setup?${params.toString()}`;
-  }, [seed, location, difficulty]);
+    const params = new URLSearchParams({ seed: normalizeSeed(seed), loc: location, diff: difficulty, sun });
+    return `${window.location.origin}${import.meta.env.BASE_URL}setup?${params.toString()}`;
+  }, [seed, location, difficulty, sun]);
 
   const copyLink = async () => {
     try {
@@ -93,6 +95,18 @@ export function TeacherPage() {
               </Button>
             </div>
           </label>
+          <label className="text-sm sm:col-span-3">
+            <span className="mb-1 block text-muted">
+              Sun conditions (recorded NASA DONKI data, same for everyone)
+            </span>
+            <select className="input w-full" value={sun} onChange={(e) => setSun(e.target.value)}>
+              {RECORDED_SNAPSHOTS.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.label} · Sun: {SUN_LEVEL_TEXT[classify(s)].name}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
         <label htmlFor="class-link" className="mt-5 block text-sm text-muted">
           Link for students
@@ -109,7 +123,7 @@ export function TeacherPage() {
             Copy link
           </Button>
           <ButtonLink
-            to={`/setup?${new URLSearchParams({ seed: normalizeSeed(seed), loc: location, diff: difficulty })}`}
+            to={`/setup?${new URLSearchParams({ seed: normalizeSeed(seed), loc: location, diff: difficulty, sun })}`}
           >
             Open
           </ButtonLink>

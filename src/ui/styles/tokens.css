@@ -1,14 +1,16 @@
-/* Design tokens (Doc 05 §2.1). Values are RGB channels so Tailwind can apply opacity.
-   Dark is the default mission-console theme; light is applied with <html data-theme="light">. */
+/* Design tokens. Values are RGB channels so Tailwind can apply opacity.
+   Brand palette: cream (#F5EFE0), ink black (#14120F) and burnt orange (#CC5500).
+   Dark = ink background with cream text; light = cream background with ink text.
+   Resource and status colours keep their meaning in both themes and always come with a text label. */
 :root {
-  --bg: 11 16 32;
-  --panel: 20 27 46;
-  --panel-2: 28 37 62;
-  --panel-border: 38 48 74;
-  --text: 232 236 245;
-  --text-muted: 154 164 191;
-  --mars: 226 112 58;
-  --moon: 169 180 200;
+  --bg: 20 18 15;
+  --panel: 30 27 23;
+  --panel-2: 42 38 32;
+  --panel-border: 62 55 46;
+  --text: 245 239 224;
+  --text-muted: 184 173 153;
+  --mars: 226 105 26;
+  --moon: 176 168 155;
   --o2: 79 195 247;
   --water: 61 139 253;
   --food: 123 198 123;
@@ -16,13 +18,13 @@
   --radiation: 199 125 255;
   --science: 94 234 212;
   --ok: 63 185 80;
-  --warn: 242 169 59;
+  --warn: 236 172 52;
   --danger: 242 85 85;
-  --info: 108 168 255;
-  --accent: var(--mars);
-  --on-accent: 11 16 32;
-  --input-border: 92 104 138;
-  --scrim: 3 6 15;
+  --info: 130 176 230;
+  --accent: 226 105 26; /* burnt orange */
+  --on-accent: 20 18 15;
+  --input-border: 110 100 86;
+  --scrim: 8 7 5;
   --hover-brightness: 1.1;
 
   /* Base view scene (BaseView.tsx). Labels get a halo so they read on sky and ground alike. */
@@ -41,35 +43,36 @@
   --scene-earth: 61 139 253;
   --scene-dust: 194 65 12;
   --scene-shadow: 0 0 0;
-  --scene-strut: 154 164 191;
+  --scene-strut: 184 173 153;
   --scene-panel: 30 58 138;
   --scene-panel-edge: 96 165 250;
-  --scene-planned: 232 236 245;
+  --scene-planned: 245 239 224;
   --scene-casing: 31 41 55;
   --scene-charge: 255 201 74;
   --scene-habitat: 209 213 219;
   --scene-habitat-edge: 154 164 191;
   --scene-door: 55 65 81;
-  --scene-crew: 11 16 32;
-  --scene-suit: 232 236 245;
+  --scene-crew: 20 18 15;
+  --scene-suit: 245 239 224;
   --scene-tank: 30 58 95;
   --scene-shelter: 51 65 85;
-  --scene-label: 199 206 222;
+  --scene-label: 230 222 204;
   --scene-label-strong: 255 255 255;
-  --scene-label-halo: 11 16 32;
+  --scene-label-halo: 20 18 15;
   color-scheme: dark;
 }
 
 /* Light theme: darker accents and status colours keep text contrast at WCAG AA on white panels. */
+/* Light theme: darker accents and status colours keep text contrast at WCAG AA on cream panels. */
 :root[data-theme='light'] {
-  --bg: 241 244 250;
-  --panel: 255 255 255;
-  --panel-2: 234 238 246;
-  --panel-border: 208 215 229;
-  --text: 17 24 39;
-  --text-muted: 71 82 105;
-  --mars: 194 65 12;
-  --moon: 71 85 105;
+  --bg: 245 239 224;
+  --panel: 251 248 240;
+  --panel-2: 236 227 208;
+  --panel-border: 214 200 174;
+  --text: 20 18 15;
+  --text-muted: 88 80 69;
+  --mars: 179 74 0;
+  --moon: 92 86 78;
   --o2: 3 115 180;
   --water: 37 99 235;
   --food: 21 128 61;
@@ -77,12 +80,13 @@
   --radiation: 126 34 206;
   --science: 13 128 120;
   --ok: 21 128 61;
-  --warn: 180 83 9;
+  --warn: 135 95 0;
   --danger: 200 30 30;
-  --info: 37 99 235;
-  --on-accent: 255 255 255;
-  --input-border: 128 140 163;
-  --scrim: 15 23 42;
+  --info: 30 90 170;
+  --accent: 179 74 0; /* burnt orange, darkened for text contrast on cream */
+  --on-accent: 251 248 240;
+  --input-border: 150 136 112;
+  --scrim: 20 18 15;
   --hover-brightness: 0.9;
 
   /* Daytime scene: butterscotch Mars sky, pale lunar regolith, dark labels on a light halo. */
@@ -100,26 +104,22 @@
   --scene-sun-moon: 255 247 214;
   --scene-earth: 96 165 250;
   --scene-dust: 180 83 40;
-  --scene-shadow: 15 23 42;
+  --scene-shadow: 20 18 15;
   --scene-strut: 100 116 139;
   --scene-panel: 30 64 175;
   --scene-panel-edge: 30 58 138;
-  --scene-planned: 30 41 59;
+  --scene-planned: 20 18 15;
   --scene-casing: 51 65 85;
   --scene-charge: 245 179 30;
   --scene-habitat: 248 250 252;
   --scene-habitat-edge: 100 116 139;
   --scene-door: 71 85 105;
-  --scene-crew: 15 23 42;
+  --scene-crew: 20 18 15;
   --scene-suit: 255 255 255;
   --scene-tank: 191 219 254;
   --scene-shelter: 221 214 254;
-  --scene-label: 30 41 59;
+  --scene-label: 40 35 30;
   --scene-label-strong: 0 0 0;
-  --scene-label-halo: 255 255 255;
+  --scene-label-halo: 251 248 240;
   color-scheme: light;
-}
-
-[data-location='moon'] {
-  --accent: var(--moon);
 }

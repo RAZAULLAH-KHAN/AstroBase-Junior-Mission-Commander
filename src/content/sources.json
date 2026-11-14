@@ -62,6 +62,13 @@
     "year": 2024,
     "url": "https://science.nasa.gov/mars/facts/"
   },
+  "NASA-DONKI": {
+    "title": "DONKI: Space Weather Database Of Notifications, Knowledge, Information (SEP, CME and GST records)",
+    "authors": "NASA Goddard Community Coordinated Modeling Center",
+    "publisher": "NASA",
+    "year": 2026,
+    "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/"
+  },
   "THERMO-ELECTROLYSIS": {
     "title": "Thermodynamics of water electrolysis (higher heating value of hydrogen, 285.8 kJ/mol H2O)",
     "authors": "Standard thermochemical data",

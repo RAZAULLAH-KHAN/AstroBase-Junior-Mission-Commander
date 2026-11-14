@@ -1,4 +1,4 @@
-// Number formatting rules from Doc 05 §6: 1 decimal for kg/kWh, whole numbers for kcal and days, always units.
+// Number formatting rules: 1 decimal for kg/kWh, whole numbers for kcal and days, always units.
 
 export function fmt1(value: number): string {
   return value.toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });

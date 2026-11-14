@@ -1,4 +1,4 @@
-// Crew statuses, health and evacuation (Doc 04 §6.5; pipeline steps 1 and 12).
+// Crew statuses, health and evacuation.
 import { k, CREW_DEFS } from '../constants';
 import { addLink, findLink, type TickContext } from '../context';
 import { copy, fill } from '../copy';

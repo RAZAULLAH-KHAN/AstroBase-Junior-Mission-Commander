@@ -1,4 +1,4 @@
-// Typed access to content/constants.json (ADR-06, NFR-09).
+// Typed access to content/constants.json.
 // The engine never hard-codes a game number: every value is read from here.
 import constants from '../content/constants.json';
 import modulesJson from '../content/modules.json';
@@ -6,7 +6,15 @@ import eventsJson from '../content/events.json';
 import marsScenario from '../content/scenarios/mars.json';
 import moonScenario from '../content/scenarios/moon.json';
 import crewJson from '../content/crew.json';
-import type { CrewRole, CrewTask, Difficulty, EventDefinition, Location, ModuleId } from './types';
+import type {
+  CrewRole,
+  CrewTask,
+  Difficulty,
+  EventDefinition,
+  Location,
+  ModuleId,
+  SunActivity,
+} from './types';
 
 type ConstantKey = keyof typeof constants;
 
@@ -37,6 +45,13 @@ export function difficultyFactor(
   d: Difficulty,
 ) {
   return kAt(key, DIFFICULTY_INDEX[d]);
+}
+
+const SUN_INDEX: Record<SunActivity, number> = { quiet: 0, active: 1, stormy: 2 };
+
+/** Multiplier on the daily chance of a solar particle event for the chosen sun activity. */
+export function sunFactor(activity: SunActivity | undefined): number {
+  return kAt('SUN_ACTIVITY_SPE_MULTIPLIER', SUN_INDEX[activity ?? 'active']);
 }
 
 export interface ModuleDefinition {

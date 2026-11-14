@@ -1,4 +1,4 @@
-// Mission creation (Doc 02 F-01).
+// Mission creation.
 import { CREW_DEFS, difficultyFactor, k, kLoc, SCENARIOS } from './constants';
 import { scheduleEvents } from './events/scheduler';
 import { averageDoseMSv, averageHealth, batteryNominalKWh } from './helpers';

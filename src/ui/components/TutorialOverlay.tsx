@@ -19,7 +19,7 @@ function findTarget(name: string): HTMLElement | null {
   return null;
 }
 
-/** Spotlight tutorial (Doc 02 F-02). Step 4 (index 3) waits for the player to press End Sol. */
+/** Spotlight tutorial. Step 4 (index 3) waits for the player to press End Sol. */
 export function TutorialOverlay({ step, onStep, onSkip, endLabel }: TutorialOverlayProps) {
   const [rect, setRect] = useState<DOMRect | null>(null);
   const current = STEPS[step];

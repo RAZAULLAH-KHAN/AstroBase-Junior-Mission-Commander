@@ -62,7 +62,7 @@ export function SiteLayout() {
       </main>
       <footer className="no-print border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-6 text-sm text-muted sm:flex-row sm:justify-between">
-          <span>Built for NASA Space Apps Challenge 2026</span>
+          <span>Built by team WAYBACK for NASA Space Apps Challenge 2026</span>
           <span>
             Values based on NASA references — see the <Link to="/library">Science Library</Link>
           </span>

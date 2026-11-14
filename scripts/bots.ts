@@ -1,4 +1,4 @@
-// Bot strategies for balancing (Doc 04 §10).
+// Bot strategies for balancing.
 import {
   getForecast,
   getKnownEvents,

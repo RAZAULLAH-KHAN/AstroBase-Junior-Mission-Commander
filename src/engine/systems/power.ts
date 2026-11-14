@@ -1,4 +1,4 @@
-// Environment, solar generation, demand and load shedding (Doc 04 §4–5; pipeline steps 3, 5, 6, 7).
+// Environment, solar generation, demand and load shedding.
 import { k } from '../constants';
 import { addLink, emptyDemand, emptyServed, type TickContext } from '../context';
 import { copy, fill, fmt, pct } from '../copy';
@@ -94,7 +94,7 @@ export function computeDemand(s: GameState, input: DemandInputs): DemandResult {
   return { demand, o2UseKg, o2TargetKg, crewWaterKg };
 }
 
-// ---------- Allocation (Doc 04 §5.2–5.3) ----------
+// ---------- Allocation ----------
 
 export interface AllocationResult {
   served: Record<SystemId, number>;

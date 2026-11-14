@@ -1,4 +1,4 @@
-// Turns the causal log into ranked "Why?" chains, a headline, tips and a crew quote (Doc 04 §8.3; pipeline step 16).
+// Turns the causal log into ranked "Why?" chains, a headline, tips and a crew quote.
 import { eventDef, k } from './constants';
 import { findLink, type TickContext } from './context';
 import { copy, fill, fmt, fmtInt, pct, tip } from './copy';

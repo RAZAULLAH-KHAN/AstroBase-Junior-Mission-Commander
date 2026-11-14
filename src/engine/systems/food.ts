@@ -1,4 +1,4 @@
-// Greenhouse harvest and eating (Doc 04 §6.3; pipeline step 10).
+// Greenhouse harvest and eating.
 import { k } from '../constants';
 import { addLink, findLink, type TickContext } from '../context';
 import { copy, fill, fmtInt } from '../copy';

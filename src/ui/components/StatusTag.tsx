@@ -8,7 +8,7 @@ const STYLES: Record<AlertLevel | 'ok', { label: string; cls: string; marker: st
   ok: { label: 'OK', cls: 'border-ok/50 bg-ok/10 text-ok', marker: 'bg-ok rounded-full' },
 };
 
-/** Status is always shown as shape + text label, never colour alone (Doc 05 P6). */
+/** Status is always shown as shape + text label, never colour alone. */
 export function StatusTag({
   level,
   label,

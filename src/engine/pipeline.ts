@@ -1,4 +1,4 @@
-// The ordered tick pipeline (Doc 03 §6). Pure: (state, decisions) → (next state, report).
+// The ordered tick pipeline. Pure: (state, decisions) → (next state, report).
 import { getAlerts, getForecast } from './alerts';
 import { completeConstruction, buildPointIncome } from './construction';
 import { emptyDemand, emptyServed, type TickContext } from './context';

@@ -1,4 +1,4 @@
-// Engine test cases from Doc 04 §12, plus coverage of scheduling, validation, construction and scoring.
+// Engine test cases, plus coverage of scheduling, validation, construction and scoring.
 import { describe, expect, it } from 'vitest';
 import {
   createMission,
@@ -93,7 +93,7 @@ describe('power allocation', () => {
     }
   });
 
-  it('reproduces the Doc 04 §11 worked example for Mars day 1', () => {
+  it('reproduces the hand-calculated worked example for Mars day 1', () => {
     const { state, reports } = run(mission({}, []), 1, () => ({ assignments: { bot: 'regolith' } }));
     const m = state.lastDay!;
     expect(m.generationKWh).toBeGreaterThan(80);
@@ -446,5 +446,37 @@ describe('invariants', () => {
         }
       }
     }
+  });
+});
+
+describe('sun activity from NASA DONKI', () => {
+  const speCount = (sunActivity?: 'quiet' | 'active' | 'stormy') => {
+    let total = 0;
+    for (let i = 0; i < 200; i++) {
+      const s = createMission(defaultConfig({ seed: `SUN-${i}`, location: 'moon', sunActivity }));
+      total += s.scheduledEvents.filter((e) => e.defId === 'spe').length;
+    }
+    return total;
+  };
+
+  it('T-SUN-01: no sun level behaves exactly like Active, so existing missions and balance are unchanged', () => {
+    const a = createMission(defaultConfig({ seed: 'SUN-SAME' }));
+    const b = createMission(defaultConfig({ seed: 'SUN-SAME', sunActivity: 'active' }));
+    expect(b.scheduledEvents).toEqual(a.scheduledEvents);
+  });
+
+  it('T-SUN-02: a stormy Sun brings more solar particle events than a quiet one', () => {
+    const quiet = speCount('quiet');
+    const active = speCount('active');
+    const stormy = speCount('stormy');
+    expect(quiet).toBeLessThan(active);
+    expect(active).toBeLessThan(stormy);
+  });
+
+  it('T-SUN-03: the guaranteed mid-mission solar storm still happens on a quiet Sun', () => {
+    const s = createMission(defaultConfig({ seed: 'SUN-QUIET', sunActivity: 'quiet' }));
+    expect(s.scheduledEvents.some((e) => e.defId === 'spe' && e.startDay >= 10 && e.startDay <= 25)).toBe(
+      true,
+    );
   });
 });

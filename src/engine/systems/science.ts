@@ -1,4 +1,4 @@
-// Lab work, EVAs and science objectives (Doc 02 F-12, Doc 04 §6.6; pipeline step 13).
+// Lab work, EVAs and science objectives.
 import objectivesJson from '../../content/objectives.json';
 import { eventDef, k } from '../constants';
 import { addLink, findLink, type TickContext } from '../context';

@@ -1,4 +1,4 @@
-// Public API of the simulation engine (Doc 03 §4). The UI and store import only from here.
+// Public API of the simulation engine. The UI and store import only from here.
 import type { GameState, Outcome } from './types';
 
 export { createMission, defaultConfig, demoConfig, DEFAULT_PRIORITY, DEMO_DURATION_DAYS } from './mission';

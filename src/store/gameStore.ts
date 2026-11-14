@@ -1,4 +1,4 @@
-// Application state (Doc 03 §7). The store validates decisions, calls the engine, persists and tracks UI state.
+// Application state. The store validates decisions, calls the engine, persists and tracks UI state.
 import { create } from 'zustand';
 import {
   createMission,

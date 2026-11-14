@@ -1,4 +1,4 @@
-// Seeded PRNG (ADR-05). mulberry32 — small, fast, good enough for games (not cryptographic).
+// Seeded PRNG. mulberry32 — small, fast, good enough for games (not cryptographic).
 
 export function nextRandom(state: number): [value: number, next: number] {
   const next = (state + 0x6d2b79f5) | 0;

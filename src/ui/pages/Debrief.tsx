@@ -7,6 +7,16 @@ import { Button, ButtonLink } from '../components/Button';
 import { LazyHistoryChart as HistoryChart } from '../components/LazyHistoryChart';
 import { cx, fmt1, fmtInt } from '../format';
 
+const AFTERMATH: Record<FailureReason, string> = {
+  o2: 'After this day, the oxygen supply kept falling.',
+  water: 'After this day, the water supply kept falling.',
+  food: 'After this day, the food supply kept falling.',
+  evacuated: 'After this day, crew health kept falling.',
+  radiation: "After this day, the crew's radiation dose stayed over the mission budget.",
+};
+
+const SUN_NAMES = { quiet: 'Quiet', active: 'Active', stormy: 'Stormy' } as const;
+
 const REASON_LESSONS: Record<FailureReason | 'success', string[]> = {
   o2: [
     'Making oxygen takes a lot of electricity. Keep life support at the top of the priority list.',
@@ -44,7 +54,11 @@ function lessons(reports: DayReport[], reason: FailureReason | 'success'): strin
   const counts = new Map<string, number>();
   for (const r of reports) for (const t of r.tips) counts.set(t, (counts.get(t) ?? 0) + 1);
   const fromPlay = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([t]) => t);
-  return [...new Set([...fromPlay, ...REASON_LESSONS[reason]])].slice(0, 3);
+  const forReason = REASON_LESSONS[reason];
+  // On a failure, the first lesson always addresses what actually ended the mission.
+  const ordered =
+    reason === 'success' ? [...fromPlay, ...forReason] : [forReason[0], ...fromPlay, ...forReason];
+  return [...new Set(ordered)].slice(0, 3);
 }
 
 function summaryText(game: GameState, reports: DayReport[]): string {
@@ -56,6 +70,7 @@ function summaryText(game: GameState, reports: DayReport[]): string {
     `Destination: ${game.config.location === 'mars' ? 'Mars' : 'Moon'}`,
     `Difficulty: ${game.config.difficulty}`,
     `Mission code: ${game.config.seed}`,
+    `Sun activity: ${SUN_NAMES[game.config.sunActivity ?? 'active']}${game.config.sunSource ? ` (${game.config.sunSource})` : ''}`,
     `Result: ${o.result === 'success' ? 'Mission complete' : copy.outcome[o.reason!]}`,
     `Score: ${o.score} (${o.stars} of 3 stars)`,
     '',
@@ -126,7 +141,7 @@ export function DebriefPage() {
     <div className="mx-auto max-w-5xl px-4 py-10">
       <p className="panel-title">
         Mission debrief · {game.config.location === 'mars' ? 'Mars' : 'Moon'} · {game.config.difficulty} ·
-        code {game.config.seed}
+        code {game.config.seed} · sun {SUN_NAMES[game.config.sunActivity ?? 'active'].toLowerCase()}
       </p>
       <h1 className={cx('mt-2 text-3xl font-semibold sm:text-4xl', success ? 'text-ok' : 'text-text')}>
         {success
@@ -176,7 +191,9 @@ export function DebriefPage() {
                 </p>
               )}
               <p className="mt-2 text-sm text-muted">
-                After this day, the resource that ended the mission kept falling.
+                {game.outcome?.reason
+                  ? AFTERMATH[game.outcome.reason]
+                  : 'From this day on, the trend never recovered.'}
               </p>
             </>
           ) : (

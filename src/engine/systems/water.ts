@@ -1,4 +1,4 @@
-// Water use and recycling (Doc 04 §6.2; pipeline step 9).
+// Water use and recycling.
 // Used water goes to a holding tank; the recycler processes it when it has power, so a power cut
 // delays recycling instead of destroying the water. Only tank overflow and recycler losses are lost.
 import { k } from '../constants';

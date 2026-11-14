@@ -9,7 +9,7 @@ interface EventModalProps {
   onClose: () => void;
 }
 
-/** Shown at the start of a day when an event is forecast or has begun (Doc 05 §4.6). */
+/** Shown at the start of a day when an event is forecast or has begun. */
 export function EventModal({ game, eventKey, onClose }: EventModalProps) {
   const navigate = useNavigate();
   const event = game.scheduledEvents.find((e) => e.key === eventKey);

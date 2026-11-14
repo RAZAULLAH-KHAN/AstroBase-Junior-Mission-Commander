@@ -1,4 +1,4 @@
-// Build orders, repairs and build-point income (Doc 02 F-05, Doc 04 §6.7; pipeline steps 1, 4, 14).
+// Build orders, repairs and build-point income.
 import { k, MODULE_DEFS } from './constants';
 import { addLink, type TickContext } from './context';
 import { copy, fill } from './copy';

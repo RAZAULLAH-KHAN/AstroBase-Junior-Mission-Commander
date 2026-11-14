@@ -1,5 +1,5 @@
-// Pre-rolls every event of a mission from its seed (Doc 04 §7.1), so teachers can predict missions.
-import { difficultyFactor, EVENT_DEFS, eventDef } from '../constants';
+// Pre-rolls every event of a mission from its seed, so teachers can predict missions.
+import { difficultyFactor, EVENT_DEFS, eventDef, sunFactor } from '../constants';
 import type { Rng } from '../rng';
 import type { EventDefinition, GameState, KnownEvent, MissionConfig, ScheduledEvent } from '../types';
 
@@ -55,6 +55,8 @@ export function scheduleEvents(config: MissionConfig, rng: Rng): ScheduledEvent[
 
   const events: ScheduledEvent[] = [];
   const frequency = difficultyFactor('EVENT_FREQUENCY_MULTIPLIER', config.difficulty);
+  // Real space weather (NASA DONKI) changes how often the Sun throws a particle storm at the base.
+  const sun = sunFactor(config.sunActivity);
   const candidates = EVENT_DEFS.filter(
     (d) =>
       d.locations.includes(config.location) &&
@@ -65,7 +67,8 @@ export function scheduleEvents(config: MissionConfig, rng: Rng): ScheduledEvent[
   for (let day = 2; day <= config.durationDays - 1; day++) {
     for (const def of candidates) {
       const roll = rng.next();
-      if (roll >= def.baseProbability * frequency) continue;
+      const chance = def.baseProbability * frequency * (def.kind === 'spe' ? sun : 1);
+      if (roll >= chance) continue;
       const candidate = rollEvent(def, day, rng);
       if (categoryFree(events, def.category, day, candidate.durationDays)) events.push(candidate);
     }
@@ -89,7 +92,7 @@ export function scheduleEvents(config: MissionConfig, rng: Rng): ScheduledEvent[
   return events.sort((a, b) => a.startDay - b.startDay || a.defId.localeCompare(b.defId));
 }
 
-/** Fixed script for the 7-day judge demo (Doc 02 §1.1): dust storm on sol 3, solar flare on sol 6. */
+/** Fixed script for the 7-day judge demo: dust storm on sol 3, solar flare on sol 6. */
 export function demoScript(): ScheduledEvent[] {
   return [
     {

@@ -1,4 +1,4 @@
-// Domain model for the AstroBase simulation (Doc 03 §5).
+// Domain model for the AstroBase simulation.
 // Pure types only: no runtime code, no UI dependencies.
 
 // ---------- Enums / literals ----------
@@ -19,6 +19,9 @@ export type CrewTask = 'maintenance' | 'greenhouse' | 'research' | 'regolith' | 
 export type CrewStatus = 'active' | 'sick' | 'sheltering' | 'onEVA' | 'evacuated';
 export type AlertLevel = 'info' | 'amber' | 'red';
 export type EvaMode = 'survey' | 'drill';
+/** How busy the Sun is, taken from NASA DONKI space-weather records. Scales the chance of solar particle events. */
+export type SunActivity = 'quiet' | 'active' | 'stormy';
+export const SUN_ACTIVITIES: readonly SunActivity[] = ['quiet', 'active', 'stormy'];
 export type ObjectiveId = 'samples' | 'harvest' | 'storm' | 'lab' | 'drill';
 export type FailureReason = 'o2' | 'water' | 'food' | 'evacuated' | 'radiation';
 export type EventKind =
@@ -58,7 +61,9 @@ export interface MissionConfig {
   seed: string; // e.g. "MARS-7KQ2PX"
   durationDays: number; // 30 (7 for the demo)
   crewSize: number; // 5
-  demo?: boolean; // scripted judge demo (Doc 02 §1.1)
+  demo?: boolean; // scripted judge demo
+  sunActivity?: SunActivity; // defaults to 'active' (the balanced baseline)
+  sunSource?: string; // where the sun level came from, shown to the player (e.g. "NASA DONKI, live")
 }
 
 // ---------- Core state ----------

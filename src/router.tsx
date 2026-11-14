@@ -9,18 +9,21 @@ import { PlayPage } from './ui/pages/Play';
 import { SetupPage } from './ui/pages/Setup';
 import { TeacherPage } from './ui/pages/Teacher';
 
-export const router = createBrowserRouter([
-  { path: '/play', element: <PlayPage /> },
-  {
-    element: <SiteLayout />,
-    children: [
-      { path: '/', element: <LandingPage /> },
-      { path: '/setup', element: <SetupPage /> },
-      { path: '/debrief', element: <DebriefPage /> },
-      { path: '/library', element: <LibraryPage /> },
-      { path: '/teacher', element: <TeacherPage /> },
-      { path: '/about', element: <AboutPage /> },
-      { path: '*', element: <NotFoundPage /> },
-    ],
-  },
-]);
+export const router = createBrowserRouter(
+  [
+    { path: '/play', element: <PlayPage /> },
+    {
+      element: <SiteLayout />,
+      children: [
+        { path: '/', element: <LandingPage /> },
+        { path: '/setup', element: <SetupPage /> },
+        { path: '/debrief', element: <DebriefPage /> },
+        { path: '/library', element: <LibraryPage /> },
+        { path: '/teacher', element: <TeacherPage /> },
+        { path: '/about', element: <AboutPage /> },
+        { path: '*', element: <NotFoundPage /> },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL.replace(/\/$/, '') || '/' },
+);

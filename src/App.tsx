@@ -16,7 +16,7 @@ export function App() {
     document.documentElement.dataset.theme = theme;
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', theme === 'dark' ? '#0B1020' : '#F1F4FA');
+      ?.setAttribute('content', theme === 'dark' ? '#14120F' : '#F5EFE0');
   }, [theme]);
 
   return <RouterProvider router={router} />;

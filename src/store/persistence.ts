@@ -1,4 +1,4 @@
-// localStorage persistence (Doc 02 F-13, Doc 03 §7). Every access is guarded: storage can be unavailable.
+// localStorage persistence. Every access is guarded: storage can be unavailable.
 import type { DayReport, GameState } from '../engine';
 
 export const SAVE_KEY = 'astrobase.save.v1';

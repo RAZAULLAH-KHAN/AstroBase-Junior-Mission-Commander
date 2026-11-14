@@ -40,6 +40,11 @@ export function PlayPage() {
   const demo = params.get('demo') === '1';
   const view = useMission();
 
+  // Mission Control sits outside the site layout, so reset the scroll left over from the setup page.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const store = useGameStore.getState();
     if (demo) {
@@ -150,7 +155,7 @@ function MissionControl({ view }: { view: MissionView }) {
         </p>
       )}
       {demoGuide && !finished && (
-        <div className="border-b border-info/40 bg-info/10 px-4 py-2 text-sm" role="note">
+        <div className="border-b border-accent/40 bg-accent/10 px-4 py-2 text-sm" role="note">
           <strong className="mr-1">Demo guide.</strong>
           {demoGuide}
         </div>

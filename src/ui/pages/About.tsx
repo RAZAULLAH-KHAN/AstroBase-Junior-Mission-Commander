@@ -12,18 +12,13 @@ export function AboutPage() {
       </p>
 
       <section className="panel mt-8 p-5">
-        <h2 className="text-xl font-semibold">Team</h2>
+        <h2 className="text-xl font-semibold">Team WAYBACK</h2>
+        <p className="mt-1 text-sm text-muted">Multan, Pakistan</p>
         <dl className="mt-3 space-y-3">
           <div>
             <dt className="font-semibold">Raza Ullah Khan</dt>
             <dd className="text-muted">
-              Technical Lead — simulation engine, architecture, testing and deployment
-            </dd>
-          </div>
-          <div>
-            <dt className="font-semibold">Sahrish</dt>
-            <dd className="text-muted">
-              Product, Design and Science Lead — user experience, research and content
+              Team owner and developer: simulation engine, science research, design, testing and deployment
             </dd>
           </div>
         </dl>
@@ -62,6 +57,18 @@ export function AboutPage() {
           Chang'e-4 lunar radiation measurements, NASA-STD-3001, ISS water recovery results, NASA/JPL reports
           on the 2018 global dust storm, and LOLA lunar polar illumination studies. Full references are in the{' '}
           <Link to="/library">Science Library</Link>.
+        </p>
+        <h3 className="mt-4 font-semibold">Real space weather: NASA DONKI</h3>
+        <p className="mt-1 text-muted">
+          Before each mission, the setup page asks NASA&apos;s space weather database{' '}
+          <a href="https://kauai.ccmc.gsfc.nasa.gov/DONKI/" target="_blank" rel="noreferrer">
+            DONKI
+          </a>{' '}
+          for the last 30 days of solar particle events and coronal mass ejections. The result sets the
+          mission&apos;s sun level (Quiet, Active or Stormy), which changes how often solar storms hit the
+          base, so the shielding decision depends on what the real Sun is doing. If NASA cannot be reached,
+          the game offers recorded DONKI periods instead (May 2024, October 2024, mid-2019 and the 60 days
+          before the hackathon) and labels them with their dates. Recorded data is never shown as live.
         </p>
       </section>
 

@@ -1,4 +1,4 @@
-// Runs many bot missions and reports survival rates (Doc 04 §10).
+// Runs many bot missions and reports survival rates.
 // Usage: npm run balance -- [missionsPerCell=300] [--csv]
 import { writeFileSync } from 'node:fs';
 import {
@@ -14,6 +14,9 @@ const BOTS: Record<string, Bot> = { passive, 'greedy-science': greedyScience, se
 
 const missionsPerCell = Number(process.argv.find((a) => /^\d+$/.test(a)) ?? 300);
 const writeCsv = process.argv.includes('--csv');
+// Optional: --sun=quiet|active|stormy runs every mission under that NASA DONKI sun level.
+const sunArg = process.argv.find((a) => a.startsWith('--sun='))?.slice(6);
+const sunActivity = sunArg === 'quiet' || sunArg === 'stormy' ? sunArg : 'active';
 const rows: string[] = [
   'seed,location,difficulty,bot,result,reason,day,score,stars,o2Kg,waterKg,foodKcal,avgDose',
 ];
@@ -27,7 +30,7 @@ for (const location of ['mars', 'moon'] as Location[]) {
       let scoreSum = 0;
       for (let i = 0; i < missionsPerCell; i++) {
         const seed = `BAL-${i}`;
-        let s = createMission(defaultConfig({ seed, location, difficulty }));
+        let s = createMission(defaultConfig({ seed, location, difficulty, sunActivity }));
         while (!s.outcome) s = simulateDay(s, bot(s)).next;
         const o = s.outcome;
         if (o.result === 'success') survived++;

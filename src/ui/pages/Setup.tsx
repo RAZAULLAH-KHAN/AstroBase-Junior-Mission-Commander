@@ -12,6 +12,16 @@ import { useGameStore } from '../../store/gameStore';
 import { hasSave } from '../../store/persistence';
 import { Button } from '../components/Button';
 import { cx } from '../format';
+import {
+  classify,
+  DEFAULT_SNAPSHOT_ID,
+  DONKI_HOME,
+  fetchLiveSpaceWeather,
+  RECORDED_SNAPSHOTS,
+  sourceLabel,
+  SUN_LEVEL_TEXT,
+  type SpaceWeatherSnapshot,
+} from '../spaceWeather';
 
 const DIFFICULTIES: { id: Difficulty; name: string; text: string }[] = [
   {
@@ -51,6 +61,37 @@ export function SetupPage() {
 
   useEffect(() => setSaveExists(hasSave()), []);
 
+  // Sun conditions from NASA DONKI. A teacher link fixes a recorded period so the whole class matches.
+  const linkedSun = RECORDED_SNAPSHOTS.find((s) => s.id === params.get('sun'))?.id;
+  const [sunId, setSunId] = useState(linkedSun ?? DEFAULT_SNAPSHOT_ID);
+  const [sunChosen, setSunChosen] = useState(Boolean(linkedSun));
+  const [live, setLive] = useState<SpaceWeatherSnapshot | null>(null);
+  const [liveStatus, setLiveStatus] = useState<'loading' | 'ok' | 'failed'>('loading');
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchLiveSpaceWeather()
+      .then((s) => {
+        if (cancelled) return;
+        setLive(s);
+        setLiveStatus('ok');
+      })
+      .catch(() => {
+        if (!cancelled) setLiveStatus('failed');
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Prefer live data once it arrives, unless the player or a teacher link already chose a period.
+  useEffect(() => {
+    if (live && !sunChosen && !fromLink) setSunId('live');
+  }, [live, sunChosen, fromLink]);
+
+  const sunOptions = live ? [live, ...RECORDED_SNAPSHOTS] : RECORDED_SNAPSHOTS;
+  const sun = sunOptions.find((s) => s.id === sunId) ?? RECORDED_SNAPSHOTS[0];
+
   const chooseLocation = (loc: Location) => {
     setLocation(loc);
     if (!seedEdited) setSeed(generateSeed(loc));
@@ -60,7 +101,15 @@ export function SetupPage() {
     e.preventDefault();
     const code = normalizeSeed(seed) || generateSeed(location);
     clearMessage();
-    newMission(defaultConfig({ location, difficulty, seed: code }));
+    newMission(
+      defaultConfig({
+        location,
+        difficulty,
+        seed: code,
+        sunActivity: classify(sun),
+        sunSource: `${sun.label} (${sourceLabel(sun)})`,
+      }),
+    );
     navigate('/play');
   };
 
@@ -68,7 +117,7 @@ export function SetupPage() {
     <div className="mx-auto max-w-4xl px-4 py-10">
       <h1 className="text-3xl font-semibold">Mission setup</h1>
       {fromLink && (
-        <p className="mt-2 rounded-lg border border-info/50 bg-info/10 p-3 text-sm">
+        <p className="mt-2 rounded-lg border border-accent/50 bg-accent/10 p-3 text-sm">
           Your teacher shared this mission. Keep the same settings so everyone in class plays the same events.
         </p>
       )}
@@ -154,6 +203,72 @@ export function SetupPage() {
                 </span>
               </label>
             ))}
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend className="text-lg font-semibold">Sun conditions (real NASA data)</legend>
+          <p className="text-sm text-muted">
+            The Sun sometimes throws out bursts of fast particles called a solar particle event. They raise
+            the radiation dose: the amount of radiation the crew&apos;s bodies absorb. These periods come from
+            NASA&apos;s space weather database,{' '}
+            <a href={DONKI_HOME} target="_blank" rel="noreferrer">
+              DONKI
+            </a>
+            . A busier Sun means more solar storms in your mission.
+          </p>
+          <p className="mt-2 text-sm" role="status">
+            {liveStatus === 'loading' && 'Checking NASA DONKI for the last 30 days…'}
+            {liveStatus === 'ok' && 'Live data from NASA DONKI is available.'}
+            {liveStatus === 'failed' &&
+              'NASA DONKI could not be reached right now, so only recorded periods are shown. They are past data, not today’s Sun.'}
+          </p>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            {sunOptions.map((s) => {
+              const level = classify(s);
+              const selected = sun.id === s.id;
+              return (
+                <label
+                  key={s.id}
+                  className={cx(
+                    'panel flex cursor-pointer gap-3 p-4',
+                    selected ? 'border-accent ring-1 ring-accent' : 'hover:border-muted',
+                  )}
+                >
+                  <input
+                    type="radio"
+                    name="sun"
+                    value={s.id}
+                    checked={selected}
+                    onChange={() => {
+                      setSunId(s.id);
+                      setSunChosen(true);
+                    }}
+                    className="mt-1 accent-[rgb(var(--accent))]"
+                  />
+                  <span className="min-w-0">
+                    <span className="flex flex-wrap items-baseline justify-between gap-2">
+                      <span className="font-semibold">{s.label}</span>
+                      <span
+                        className={cx(
+                          'rounded px-1.5 py-0.5 text-xs font-semibold uppercase tracking-wide',
+                          level === 'stormy'
+                            ? 'bg-danger/15 text-danger'
+                            : level === 'active'
+                              ? 'bg-warn/15 text-warn'
+                              : 'bg-ok/15 text-ok',
+                        )}
+                      >
+                        Sun: {SUN_LEVEL_TEXT[level].name}
+                      </span>
+                    </span>
+                    <span className="mt-1 block text-sm">{s.summary}</span>
+                    <span className="mt-1 block text-sm text-muted">{SUN_LEVEL_TEXT[level].effect}</span>
+                    <span className="mt-1 block text-xs text-muted">Source: {sourceLabel(s)}</span>
+                  </span>
+                </label>
+              );
+            })}
           </div>
         </fieldset>
 

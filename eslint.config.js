@@ -22,7 +22,7 @@ export default tseslint.config(
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
-  // Layering rules (Doc 03 §1.1): the engine must stay pure and UI-free.
+  // Layering rules: the engine must stay pure and UI-free.
   {
     files: ['src/engine/**/*.ts'],
     rules: {

@@ -1,4 +1,4 @@
-// Days-remaining forecast and alert thresholds (Doc 04 §8.1–8.2; pipeline step 15).
+// Days-remaining forecast and alert thresholds.
 import { k, MODULE_DEFS } from './constants';
 import { copy, fill, fmt, pct } from './copy';
 import { getKnownEvents } from './events/scheduler';

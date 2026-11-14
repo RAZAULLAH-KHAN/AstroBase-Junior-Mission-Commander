@@ -1,4 +1,4 @@
-// Shared state for one tick of the pipeline (Doc 03 §6).
+// Shared state for one tick of the pipeline.
 import type { Rng } from './rng';
 import type {
   ActiveEvent,
