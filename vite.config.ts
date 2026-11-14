@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  // GitHub Pages serves the site from /<repo>/; the deploy workflow sets BASE_PATH. Other hosts use '/'.
+  // Set BASE_PATH to serve from a sub-path (for example GitHub Pages at /<repo>/). Vercel uses '/'.
   base: process.env.BASE_PATH ?? '/',
   plugins: [react()],
   build: {

@@ -8,7 +8,7 @@ equipment failures. After every day, the game explains **what changed, why it ch
 
 Team **WAYBACK** (Multan, Pakistan) · **Raza Ullah Khan**, team owner and developer
 
-**Play it:** https://razaullah-khan.github.io/AstroBase-Junior-Mission-Commander/ (runs in the browser, no download, no account)
+**Play it:** https://astro-base-junior-mission-commander.vercel.app/ (runs in the browser, no download, no account)
 
 Submission write-up: [`submission/SUBMISSION.md`](submission/SUBMISSION.md) · Presentation: [`submission/AstroBase-WAYBACK.pptx`](submission/AstroBase-WAYBACK.pptx)
 
@@ -41,9 +41,8 @@ npm run preview    # serve the production build
 | `npm run typecheck`            | TypeScript in strict mode                                          |
 | `npm run balance -- 300 --csv` | Runs 300 bot missions per difficulty/location; optional CSV output |
 
-Deploy: pushing to `main` publishes the site to GitHub Pages through [`.github/workflows/pages.yml`](.github/workflows/pages.yml)
-(one-time setup: repository **Settings → Pages → Source: GitHub Actions**). Any other static host also works; `vercel.json`
-rewrites all routes to `index.html` for client-side routing.
+Deploy: hosted on Vercel at https://astro-base-junior-mission-commander.vercel.app. Any static host works; `vercel.json` rewrites all routes to
+`index.html` for client-side routing. To serve from a sub-path (for example GitHub Pages), build with `BASE_PATH=/repo-name/`.
 
 ## Pages
 

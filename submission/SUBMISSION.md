@@ -3,13 +3,13 @@
 **NASA Space Apps Challenge 2026 · Challenge: Build a Junior Astronaut Mission Trainer**
 **Team:** WAYBACK · Multan, Pakistan · **Member:** Raza Ullah Khan (team owner, developer)
 
-| What           | Link                                                                                     |
-| -------------- | ---------------------------------------------------------------------------------------- |
-| Play the game  | https://razaullah-khan.github.io/AstroBase-Junior-Mission-Commander/                     |
-| 2-minute demo  | https://razaullah-khan.github.io/AstroBase-Junior-Mission-Commander/play?demo=1          |
-| Source code    | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander                     |
-| Presentation   | [`AstroBase-WAYBACK.pptx`](AstroBase-WAYBACK.pptx) (also in the repository)              |
-| Screenshots    | [`screenshots/`](screenshots/)                                                           |
+| What          | Link                                                                                                            |
+| ------------- | --------------------------------------------------------------------------------------------------------------- |
+| Play the game | https://astro-base-junior-mission-commander.vercel.app/                                                         |
+| 2-minute demo | https://astro-base-junior-mission-commander.vercel.app/play?demo=1                                              |
+| Source code   | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander                                            |
+| Presentation  | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander/raw/main/submission/AstroBase-WAYBACK.pptx |
+| Screenshots   | [`screenshots/`](screenshots/)                                                                                  |
 
 ---
 
@@ -45,28 +45,28 @@ It needs no download and no account, and it works offline once loaded.
 
 ### The trade-offs (core rules from the brief)
 
-| Resource       | What it costs                                                                       |
-| -------------- | ----------------------------------------------------------------------------------- |
-| Power          | Everything runs on it. Air, heat, water, food and science compete for every kWh.     |
-| Life support   | Oxygen by electrolysis costs 7 kWh per kg. Cutting power saves energy but risks air. |
-| Radiation      | Shielding and the storm shelter cost build points and crew time that could grow food. |
+| Resource     | What it costs                                                                         |
+| ------------ | ------------------------------------------------------------------------------------- |
+| Power        | Everything runs on it. Air, heat, water, food and science compete for every kWh.      |
+| Life support | Oxygen by electrolysis costs 7 kWh per kg. Cutting power saves energy but risks air.  |
+| Radiation    | Shielding and the storm shelter cost build points and crew time that could grow food. |
 
 There is no free "safe" option: shielding early slows food and science, skipping it risks the radiation budget.
 
 ### How real NASA data changes the game
 
-| Dataset                                              | How the game uses it                                                                                                                                                                                                                                                                 |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **DONKI** (Space Weather Database), SEP + CME        | Live call for the last 30 days. Proton events seen by GOES (above 10 MeV and 100 MeV) and the number of coronal mass ejections set the sun level: Quiet, Active or Stormy. That multiplies the daily chance of a solar particle event by 0.5, 1 or 2.                              |
+| Dataset                                              | How the game uses it                                                                                                                                                                                                                                                          |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **DONKI** (Space Weather Database), SEP + CME        | Live call for the last 30 days. Proton events seen by GOES (above 10 MeV and 100 MeV) and the number of coronal mass ejections set the sun level: Quiet, Active or Stormy. That multiplies the daily chance of a solar particle event by 0.5, 1 or 2.                         |
 | **DONKI** recorded periods (downloaded 14 Nov 2026)  | Fallback when NASA cannot be reached, and fixed periods for classrooms: May 2024 and October 2024 (Stormy), 15 Sep to 13 Nov 2026 (Active: 0 particle events, 174 CMEs, 3 geomagnetic storms), June to July 2019 (Quiet). Always labelled with dates and never shown as live. |
-| NASA BVAD (2018)                                     | Oxygen, water and food needed per astronaut per day.                                                                                                                                                                                                                                 |
-| Curiosity RAD (Hassler et al. 2014)                  | Daily cosmic-ray dose on the surface of Mars.                                                                                                                                                                                                                                        |
-| NASA-STD-3001 (2022)                                 | Career radiation limit (600 mSv) shown next to the mission budget.                                                                                                                                                                                                                   |
-| NASA ISS ECLSS water recovery (2023)                 | Water recycler efficiency levels (85 / 93 / 98%).                                                                                                                                                                                                                                    |
-| NASA/JPL 2018 global dust storm reports              | Dust optical depth (τ) and its effect on solar panels.                                                                                                                                                                                                                               |
-| LOLA lunar polar illumination (Mazarico et al. 2011) | Sunlit share of the day at the lunar south pole and shadow periods.                                                                                                                                                                                                                  |
-| NASA Mars Facts                                      | Sol length, gravity, sunlight.                                                                                                                                                                                                                                                       |
-| Partner data: Chang'e-4 LND (Zhang et al. 2020)      | Daily radiation dose on the lunar surface.                                                                                                                                                                                                                                           |
+| NASA BVAD (2018)                                     | Oxygen, water and food needed per astronaut per day.                                                                                                                                                                                                                          |
+| Curiosity RAD (Hassler et al. 2014)                  | Daily cosmic-ray dose on the surface of Mars.                                                                                                                                                                                                                                 |
+| NASA-STD-3001 (2022)                                 | Career radiation limit (600 mSv) shown next to the mission budget.                                                                                                                                                                                                            |
+| NASA ISS ECLSS water recovery (2023)                 | Water recycler efficiency levels (85 / 93 / 98%).                                                                                                                                                                                                                             |
+| NASA/JPL 2018 global dust storm reports              | Dust optical depth (τ) and its effect on solar panels.                                                                                                                                                                                                                        |
+| LOLA lunar polar illumination (Mazarico et al. 2011) | Sunlit share of the day at the lunar south pole and shadow periods.                                                                                                                                                                                                           |
+| NASA Mars Facts                                      | Sol length, gravity, sunlight.                                                                                                                                                                                                                                                |
+| Partner data: Chang'e-4 LND (Zhang et al. 2020)      | Daily radiation dose on the lunar surface.                                                                                                                                                                                                                                    |
 
 Every number lives in `src/content/constants.json`, labelled **REF** (sourced) or **GAME** (our simplification, with the
 reason). The in-game **Science Library** page lists all of them with sources, so judges can check the science. Values still
@@ -84,8 +84,7 @@ datasets in this version. Radiation doses come from Curiosity RAD and Chang'e-4 
 
 ### Tools, languages and hardware
 
-TypeScript, React 18, Vite, Tailwind CSS, Zustand, dnd-kit, Recharts, Vitest, ESLint, Prettier, GitHub Actions and GitHub
-Pages. No special hardware. Runs in any modern browser on desktop, tablet or phone.
+TypeScript, React 18, Vite, Tailwind CSS, Zustand, dnd-kit, Recharts, Vitest, ESLint, Prettier, GitHub Actions and Vercel. No special hardware. Runs in any modern browser on desktop, tablet or phone.
 
 ### Quality
 
@@ -108,7 +107,6 @@ all artwork is drawn in code. No NASA logos or insignia are used.
 
 ## 5. Checklist before the deadline (Sun 15 Nov 2026, 11:59 PM PKT)
 
-- [ ] Repository **Settings → Pages → Source: GitHub Actions**, then confirm the "Play the game" link above opens.
 - [ ] Replace the team About text ("LOOKING FOR INTERESTED ONE.") with section 1 above.
 - [ ] Project tab: title, summary (section 2), details (section 3), AI use (section 4), links, presentation.
 - [ ] Re-read the Project Submission Guide and Judging & Awards Guide (published 13 Nov) for any extra fields, such as a
