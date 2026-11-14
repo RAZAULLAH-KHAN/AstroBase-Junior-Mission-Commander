@@ -3,13 +3,14 @@
 **NASA Space Apps Challenge 2026 · Challenge: Build a Junior Astronaut Mission Trainer**
 **Team:** WAYBACK · Multan, Pakistan · **Member:** Raza Ullah Khan (team owner, developer)
 
-| What          | Link                                                                                                            |
-| ------------- | --------------------------------------------------------------------------------------------------------------- |
-| Play the game | https://astro-base-junior-mission-commander.vercel.app/                                                         |
-| 2-minute demo | https://astro-base-junior-mission-commander.vercel.app/play?demo=1                                              |
-| Source code   | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander                                            |
-| Presentation  | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander/raw/main/submission/AstroBase-WAYBACK.pptx |
-| Screenshots   | [`screenshots/`](screenshots/)                                                                                  |
+| What                          | Link                                                                                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Play the game                 | https://astro-base-junior-mission-commander.vercel.app/                                                                        |
+| 2-minute demo                 | https://astro-base-junior-mission-commander.vercel.app/play?demo=1                                                             |
+| Source code                   | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander                                                           |
+| Demo (7 slides, for the form) | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander/blob/main/submission/AstroBase-WAYBACK-demo-7-slides.pptx |
+| Full presentation (10 slides) | https://github.com/RAZAULLAH-KHAN/AstroBase-Junior-Mission-Commander/raw/main/submission/AstroBase-WAYBACK.pptx                |
+| Screenshots                   | [`screenshots/`](screenshots/)                                                                                                 |
 
 ---
 
