@@ -1,3 +1,4 @@
+/** AstroBase Component: BuildModal — Habitat module construction and upgrade interface. */
 import { useEffect, useRef } from 'react';
 import { canBuild, canRepair, k, MODULE_DEFS, MODULE_IDS, type ModuleId } from '../../engine';
 import { useGameStore } from '../../store/gameStore';

@@ -1,3 +1,4 @@
+// AstroBase: Junior Mission Commander
 // Derived data for the UI. Memoised per game/pending pair so components stay cheap to render.
 import { useMemo } from 'react';
 import {

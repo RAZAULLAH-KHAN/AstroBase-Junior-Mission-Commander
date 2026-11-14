@@ -64,12 +64,30 @@
     "MODULE_DOWN": "{module} is damaged ({pct}% condition). Repair it."
   },
   "objectives": {
-    "samples": { "name": "Collect rock samples", "requirement": "Complete 3 EVAs" },
-    "harvest": { "name": "Grow the first harvest", "requirement": "A greenhouse bed reaches full maturity" },
-    "storm": { "name": "Weather a storm", "requirement": "Get through a dust storm or shadow period without cutting life support" },
-    "lab": { "name": "Run lab experiments", "requirement": "Lab fully powered with a researcher for 5 days" },
-    "drill.mars": { "name": "Subsurface sample", "requirement": "2 drilling EVAs (uses 10 kWh in total)" },
-    "drill.moon": { "name": "Ice prospecting", "requirement": "2 drilling EVAs (uses 10 kWh in total). Gives +60 kg water" }
+    "samples": {
+      "name": "Collect rock samples",
+      "requirement": "Complete 3 EVAs"
+    },
+    "harvest": {
+      "name": "Grow the first harvest",
+      "requirement": "A greenhouse bed reaches full maturity"
+    },
+    "storm": {
+      "name": "Weather a storm",
+      "requirement": "Get through a dust storm or shadow period without cutting life support"
+    },
+    "lab": {
+      "name": "Run lab experiments",
+      "requirement": "Lab fully powered with a researcher for 5 days"
+    },
+    "drill.mars": {
+      "name": "Subsurface sample",
+      "requirement": "2 drilling EVAs (uses 10 kWh in total)"
+    },
+    "drill.moon": {
+      "name": "Ice prospecting",
+      "requirement": "2 drilling EVAs (uses 10 kWh in total). Gives +60 kg water"
+    }
   },
   "outcome": {
     "success": "Mission complete",
@@ -193,11 +211,31 @@
     }
   },
   "tutorial": [
-    { "target": "gauge-o2", "title": "This is your oxygen", "text": "Your crew breathes 0.82 kg each per day. The gauge shows how many days it will last." },
-    { "target": "power-flow", "title": "Power comes from the Sun", "text": "Solar panels make electricity. Dust and darkness reduce it, and the battery covers the night." },
-    { "target": "priority-list", "title": "You decide who gets power", "text": "Drag systems to change their priority, or move the greenhouse slider to give it more or less light." },
-    { "target": "end-sol", "title": "End the day", "text": "When you are ready, press End Sol. The simulation runs one day with your decisions." },
-    { "target": "why", "title": "Learn what happened", "text": "Read the report. The \"Why did this happen?\" button explains every change, step by step." }
+    {
+      "target": "gauge-o2",
+      "title": "This is your oxygen",
+      "text": "Your crew breathes 0.82 kg each per day. The gauge shows how many days it will last."
+    },
+    {
+      "target": "power-flow",
+      "title": "Power comes from the Sun",
+      "text": "Solar panels make electricity. Dust and darkness reduce it, and the battery covers the night."
+    },
+    {
+      "target": "priority-list",
+      "title": "You decide who gets power",
+      "text": "Drag systems to change their priority, or move the greenhouse slider to give it more or less light."
+    },
+    {
+      "target": "end-sol",
+      "title": "End the day",
+      "text": "When you are ready, press End Sol. The simulation runs one day with your decisions."
+    },
+    {
+      "target": "why",
+      "title": "Learn what happened",
+      "text": "Read the report. The \"Why did this happen?\" button explains every change, step by step."
+    }
   ],
   "demoGuide": {
     "1": "Day 1: Look at the battery. It will run short at night. Open Build and upgrade the Battery Bank, then press End Sol.",

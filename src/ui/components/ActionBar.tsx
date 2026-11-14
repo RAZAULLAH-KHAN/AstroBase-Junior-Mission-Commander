@@ -1,3 +1,4 @@
+/** AstroBase Component: ActionBar — Sol advance, pause, simulation speed & emergency controls. */
 import { k, plannedEvaCrew } from '../../engine';
 import { useGameStore } from '../../store/gameStore';
 import type { MissionView } from '../../store/selectors';

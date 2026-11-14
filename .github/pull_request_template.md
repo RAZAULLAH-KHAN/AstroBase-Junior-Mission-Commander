@@ -1,3 +1,5 @@
+<!-- AstroBase: Junior Mission Commander — Pull Request Template -->
+
 ## What and why
 
 <!-- One or two sentences. Link the feature ID, e.g. F-04. -->

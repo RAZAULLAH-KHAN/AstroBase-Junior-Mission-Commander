@@ -1,3 +1,4 @@
+// AstroBase: Junior Mission Commander
 // Player decisions: validation for the UI, and sanitised application inside the engine (pipeline step 1).
 import { k, MODULE_DEFS } from './constants';
 import { canBuild, canRepair, placeOrders } from './construction';

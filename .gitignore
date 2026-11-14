@@ -1,3 +1,4 @@
+# AstroBase Project Ignore Rules
 node_modules
 dist
 coverage

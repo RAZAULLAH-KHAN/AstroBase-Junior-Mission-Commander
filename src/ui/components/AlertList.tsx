@@ -1,3 +1,4 @@
+/** AstroBase Component: AlertList — Displays active system warnings and critical alerts. */
 import type { Alert } from '../../engine';
 import { StatusTag } from './StatusTag';
 

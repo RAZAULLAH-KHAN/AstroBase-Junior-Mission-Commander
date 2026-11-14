@@ -1,15 +1,15 @@
 {
-  "dustShedGreenhouse": "During storms, lower greenhouse light to save power for air and heat.",
-  "batteryWaste": "You wasted solar energy. A bigger battery stores it for the night.",
-  "speNoShelter": "Next time a solar storm is forecast, move the crew to the storm shelter.",
-  "speNoShelterModule": "Build a Storm Shelter before the next solar storm. It blocks 90% of the radiation.",
-  "recyclerUpgrade": "Upgrading the water recycler saves more water than it costs.",
-  "dustyPanels": "Your panels are dusty. Cleaning them gives back {pct}% power.",
-  "nightBattery": "Your battery ran out during the night. A bigger battery bank keeps systems running until sunrise.",
-  "lifeSupportShed": "Life support did not get full power. Keep it at the top of the priority list and cut the lab or greenhouse first.",
-  "foodLow": "Food is running low. Expand the greenhouse early — new beds need 10 days to grow.",
-  "doseHigh": "Radiation is adding up. Regolith shielding lowers the dose every single day.",
-  "moduleDown": "Broken equipment is costing you. An Engineer on Maintenance repairs it in 1 day.",
-  "labNoResearcher": "The lab used power but nobody was doing research. Assign someone to Research or dim the lab.",
-  "shadowPrepare": "In a shadow period, the battery is your only power. Dim everything except air, heat and water."
+    "dustShedGreenhouse": "During storms, lower greenhouse light to save power for air and heat.",
+    "batteryWaste": "You wasted solar energy. A bigger battery stores it for the night.",
+    "speNoShelter": "Next time a solar storm is forecast, move the crew to the storm shelter.",
+    "speNoShelterModule": "Build a Storm Shelter before the next solar storm. It blocks 90% of the radiation.",
+    "recyclerUpgrade": "Upgrading the water recycler saves more water than it costs.",
+    "dustyPanels": "Your panels are dusty. Cleaning them gives back {pct}% power.",
+    "nightBattery": "Your battery ran out during the night. A bigger battery bank keeps systems running until sunrise.",
+    "lifeSupportShed": "Life support did not get full power. Keep it at the top of the priority list and cut the lab or greenhouse first.",
+    "foodLow": "Food is running low. Expand the greenhouse early — new beds need 10 days to grow.",
+    "doseHigh": "Radiation is adding up. Regolith shielding lowers the dose every single day.",
+    "moduleDown": "Broken equipment is costing you. An Engineer on Maintenance repairs it in 1 day.",
+    "labNoResearcher": "The lab used power but nobody was doing research. Assign someone to Research or dim the lab.",
+    "shadowPrepare": "In a shadow period, the battery is your only power. Dim everything except air, heat and water."
 }

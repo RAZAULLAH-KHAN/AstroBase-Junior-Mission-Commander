@@ -1,3 +1,4 @@
+/** AstroBase Component: DailyReportModal — Daily end-of-sol debrief, resource deltas & cause chains. */
 import { useState } from 'react';
 import copy from '../../content/i18n/en.json';
 import { OBJECTIVES, type DayReport, type GameState } from '../../engine';

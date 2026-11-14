@@ -1,3 +1,4 @@
+/** AstroBase Component: PowerPanel — Grid distribution, load shedding priority, and battery gauge. */
 import {
   closestCenter,
   DndContext,

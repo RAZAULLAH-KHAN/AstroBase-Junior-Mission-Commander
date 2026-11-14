@@ -1,3 +1,4 @@
+/** AstroBase Component: BaseView — Main base layout, module tiles, and atmospheric visualizer. */
 import type { KeyboardEvent, ReactNode } from 'react';
 import { batteryCapacityKWh, MODULE_DEFS, type GameState, type ModuleId, type SystemId } from '../../engine';
 import { cx } from '../format';

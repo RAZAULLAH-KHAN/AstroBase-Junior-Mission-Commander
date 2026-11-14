@@ -1,3 +1,4 @@
+/** AstroBase Component: WhyChain — Visual cause-and-effect reasoning chains for simulation events. */
 import { useState } from 'react';
 import type { CausalLink } from '../../engine';
 import { cx } from '../format';

@@ -1,3 +1,4 @@
+// AstroBase: Junior Mission Commander
 // Activates and expires events for the simulated day and applies their instant effects (pipeline step 2).
 import { eventDef } from '../constants';
 import { addLink, findLink, type TickContext } from '../context';

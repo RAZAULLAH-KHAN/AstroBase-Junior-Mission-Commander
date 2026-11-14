@@ -1,3 +1,4 @@
+/** AstroBase Component: Button & ButtonLink — Accessible button primitives with variant styling. */
 import { forwardRef, type ButtonHTMLAttributes } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 import { cx } from '../format';

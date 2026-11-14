@@ -1,3 +1,4 @@
+// AstroBase: Junior Mission Commander
 // Derived values computed from state. Pure functions shared by systems, alerts and previews.
 import { k, kAt, kLoc, MODULE_DEFS } from './constants';
 import type { CrewMember, CrewRole, CrewTask, GameState, ModuleId } from './types';

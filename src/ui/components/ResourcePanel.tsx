@@ -1,3 +1,4 @@
+/** AstroBase Component: ResourcePanel — O2, water, food, and energy reserve overview. */
 import { Link } from 'react-router-dom';
 import { averageDoseMSv, doseBudgetMSv, k, resourceAlertLevel, type AlertLevel } from '../../engine';
 import type { MissionView } from '../../store/selectors';

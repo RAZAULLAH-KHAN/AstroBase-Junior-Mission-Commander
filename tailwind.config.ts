@@ -1,3 +1,4 @@
+// Tailwind CSS configuration for AstroBase: Junior Mission Commander
 import type { Config } from 'tailwindcss';
 
 const token = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;

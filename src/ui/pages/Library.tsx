@@ -1,3 +1,4 @@
+/** AstroBase Page: Library — NASA research references, educational math, and source documentation. */
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import constants from '../../content/constants.json';

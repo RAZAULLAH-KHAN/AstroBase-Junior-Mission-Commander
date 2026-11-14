@@ -1,3 +1,4 @@
+/** AstroBase Component: ThemeToggle — Light / dark theme toggle button with persistence. */
 import { useTheme } from '../hooks/useTheme';
 import { cx } from '../format';
 

@@ -1,3 +1,4 @@
+/** AstroBase: Test helper utilities and fixtures for engine simulation tests. */
 import { createMission, defaultConfig, simulateDay } from '../index';
 import type { DayDecisions, DayReport, GameState, MissionConfig, ScheduledEvent } from '../types';
 

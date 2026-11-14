@@ -1,3 +1,4 @@
+/** AstroBase Component: HistoryChart — Resource and telemetry trends visualizer across sols. */
 import { useState } from 'react';
 import {
   CartesianGrid,

@@ -1,3 +1,4 @@
+/** AstroBase Component: ProgressBar — Visual gauge for resource reserves, capacity, and limits. */
 import { cx } from '../format';
 
 interface ProgressBarProps {

@@ -1,3 +1,4 @@
+/** AstroBase Hook: useMediaQuery — Responsive viewport and media query observer. */
 import { useEffect, useState } from 'react';
 
 export function useMediaQuery(query: string): boolean {

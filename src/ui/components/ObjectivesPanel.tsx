@@ -1,3 +1,4 @@
+/** AstroBase Component: ObjectivesPanel — Mission milestones, science targets, and completion rewards. */
 import { bedMaturity, OBJECTIVES, type GameState, type ObjectiveId } from '../../engine';
 import { cx } from '../format';
 import { objectiveName } from '../objectives';

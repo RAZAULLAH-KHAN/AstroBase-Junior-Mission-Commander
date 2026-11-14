@@ -1,3 +1,4 @@
+/** AstroBase Page: NotFound — 404 fallback page with navigation back to mission control. */
 import { ButtonLink } from '../components/Button';
 
 export function NotFoundPage() {

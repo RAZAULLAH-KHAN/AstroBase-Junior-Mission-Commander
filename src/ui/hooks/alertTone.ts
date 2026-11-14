@@ -1,3 +1,4 @@
+// AstroBase: Junior Mission Commander
 // A short two-note tone for critical alerts, generated with Web Audio (no sound files needed).
 let context: AudioContext | null = null;
 

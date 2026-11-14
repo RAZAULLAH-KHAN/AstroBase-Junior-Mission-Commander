@@ -1,3 +1,4 @@
+/** AstroBase Component: Modal — Accessible dialog modal with backdrop and keyboard dismissal. */
 import { useEffect, useId, useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { cx } from '../format';

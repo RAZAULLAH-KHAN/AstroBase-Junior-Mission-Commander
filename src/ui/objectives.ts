@@ -1,3 +1,4 @@
+/** AstroBase UI: Objectives display helpers and localized labels. */
 import copy from '../content/i18n/en.json';
 import type { GameState, ObjectiveId } from '../engine';
 

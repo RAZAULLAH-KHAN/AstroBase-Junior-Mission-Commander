@@ -1,3 +1,4 @@
+/** AstroBase Component: CrewPanel — Crew roster, assignment picker, and health/morale status. */
 import copy from '../../content/i18n/en.json';
 import { CREW_TASKS, k, type CrewMember, type CrewTask } from '../../engine';
 import { useGameStore } from '../../store/gameStore';

@@ -1,3 +1,4 @@
+// AstroBase: Junior Mission Commander
 // Text templates for engine output (reports, alerts, quotes). All copy lives in content/i18n.
 import en from '../content/i18n/en.json';
 import tipsJson from '../content/tips.json';

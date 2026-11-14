@@ -1,3 +1,4 @@
+/** AstroBase Hook: useTheme — Theme synchronization and active dark/light mode state. */
 import { useGameStore } from '../../store/gameStore';
 import { useMediaQuery } from './useMediaQuery';
 

@@ -4,13 +4,27 @@
     "name": "Regional dust storm",
     "category": "power",
     "kind": "dustStorm",
-    "locations": ["mars"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.05,
-    "durationDays": [3, 6],
+    "durationDays": [
+      3,
+      6
+    ],
     "warningDays": 1,
     "warningChance": 1,
-    "params": { "tau": [2.0, 3.5] },
+    "params": {
+      "tau": [
+        2,
+        3.5
+      ]
+    },
     "teaches": "Energy storage and priorities",
     "text": {
       "forecast": "Weather satellites see a regional dust storm coming. The sky will darken soon.",
@@ -25,13 +39,25 @@
     "name": "Global dust storm",
     "category": "power",
     "kind": "dustStorm",
-    "locations": ["mars"],
-    "difficulties": ["commander"],
+    "locations": [
+      "mars"
+    ],
+    "difficulties": [
+      "commander"
+    ],
     "baseProbability": 0.01,
-    "durationDays": [8, 12],
+    "durationDays": [
+      8,
+      12
+    ],
     "warningDays": 2,
     "warningChance": 1,
-    "params": { "tau": [5.0, 8.0] },
+    "params": {
+      "tau": [
+        5,
+        8
+      ]
+    },
     "teaches": "Why the Opportunity rover was lost",
     "text": {
       "forecast": "A global dust storm is spreading around the planet. Expect almost no sunlight for more than a week.",
@@ -46,13 +72,27 @@
     "name": "Shadow period",
     "category": "power",
     "kind": "shadow",
-    "locations": ["moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.05,
-    "durationDays": [2, 4],
+    "durationDays": [
+      2,
+      4
+    ],
     "warningDays": 1,
     "warningChance": 1,
-    "params": { "illumination": [0.0, 0.2] },
+    "params": {
+      "illumination": [
+        0,
+        0.2
+      ]
+    },
     "teaches": "Battery sizing",
     "text": {
       "forecast": "Orbit calculations show the crater rim will block the Sun soon.",
@@ -67,10 +107,20 @@
     "name": "Solar particle event",
     "category": "radiation",
     "kind": "spe",
-    "locations": ["mars", "moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars",
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.02,
-    "durationDays": [1, 2],
+    "durationDays": [
+      1,
+      2
+    ],
     "warningDays": 1,
     "warningChance": 0.7,
     "params": {},
@@ -88,13 +138,28 @@
     "name": "Oxygen generator fault",
     "category": "failure.o2gen",
     "kind": "moduleFailure",
-    "locations": ["mars", "moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars",
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.02,
-    "durationDays": [1, 1],
+    "durationDays": [
+      1,
+      1
+    ],
     "warningDays": 0,
     "warningChance": 0,
-    "params": { "condition": [0.3, 0.3] },
+    "params": {
+      "condition": [
+        0.3,
+        0.3
+      ]
+    },
     "module": "o2Generator",
     "teaches": "Redundancy and repairs",
     "text": {
@@ -110,13 +175,28 @@
     "name": "Water recycler fault",
     "category": "failure.recycler",
     "kind": "moduleFailure",
-    "locations": ["mars", "moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars",
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.02,
-    "durationDays": [1, 1],
+    "durationDays": [
+      1,
+      1
+    ],
     "warningDays": 0,
     "warningChance": 0,
-    "params": { "condition": [0.2, 0.2] },
+    "params": {
+      "condition": [
+        0.2,
+        0.2
+      ]
+    },
     "module": "recycler",
     "teaches": "Why water recycling is critical",
     "text": {
@@ -132,13 +212,28 @@
     "name": "Battery cell failure",
     "category": "failure.battery",
     "kind": "moduleFailure",
-    "locations": ["mars", "moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars",
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.015,
-    "durationDays": [1, 1],
+    "durationDays": [
+      1,
+      1
+    ],
     "warningDays": 0,
     "warningChance": 0,
-    "params": { "condition": [0.75, 0.75] },
+    "params": {
+      "condition": [
+        0.75,
+        0.75
+      ]
+    },
     "module": "battery",
     "teaches": "Redundancy",
     "text": {
@@ -154,13 +249,27 @@
     "name": "Micrometeorite strike",
     "category": "failure.solar",
     "kind": "moduleDamage",
-    "locations": ["moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.015,
-    "durationDays": [1, 1],
+    "durationDays": [
+      1,
+      1
+    ],
     "warningDays": 0,
     "warningChance": 0,
-    "params": { "damage": [0.2, 0.2] },
+    "params": {
+      "damage": [
+        0.2,
+        0.2
+      ]
+    },
     "module": "solar",
     "teaches": "Risk on an airless world",
     "text": {
@@ -176,13 +285,28 @@
     "name": "Crop disease",
     "category": "crop",
     "kind": "cropDisease",
-    "locations": ["mars", "moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars",
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.02,
-    "durationDays": [4, 4],
+    "durationDays": [
+      4,
+      4
+    ],
     "warningDays": 0,
     "warningChance": 0,
-    "params": { "yieldMultiplier": [0.5, 0.5] },
+    "params": {
+      "yieldMultiplier": [
+        0.5,
+        0.5
+      ]
+    },
     "teaches": "Food diversification",
     "text": {
       "forecast": "",
@@ -197,10 +321,20 @@
     "name": "Crew illness",
     "category": "crew",
     "kind": "crewIllness",
-    "locations": ["mars", "moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars",
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0.02,
-    "durationDays": [2, 2],
+    "durationDays": [
+      2,
+      2
+    ],
     "warningDays": 0,
     "warningChance": 0,
     "params": {},
@@ -218,13 +352,32 @@
     "name": "Resupply lander",
     "category": "logistics",
     "kind": "resupply",
-    "locations": ["mars", "moon"],
-    "difficulties": ["training", "standard", "commander"],
+    "locations": [
+      "mars",
+      "moon"
+    ],
+    "difficulties": [
+      "training",
+      "standard",
+      "commander"
+    ],
     "baseProbability": 0,
-    "durationDays": [1, 1],
+    "durationDays": [
+      1,
+      1
+    ],
     "warningDays": 3,
     "warningChance": 1,
-    "params": { "foodKcal": [70000, 70000], "buildPoints": [20, 20] },
+    "params": {
+      "foodKcal": [
+        70000,
+        70000
+      ],
+      "buildPoints": [
+        20,
+        20
+      ]
+    },
     "teaches": "Logistics",
     "text": {
       "forecast": "A cargo lander from Earth is on its way. The landing pad must be clear of dust storms.",

@@ -1,3 +1,4 @@
+# AstroBase Continuous Integration Workflow (lint, typecheck, coverage, build)
 name: CI
 
 on:

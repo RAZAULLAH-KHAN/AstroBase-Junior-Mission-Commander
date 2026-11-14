@@ -1,3 +1,4 @@
+/** AstroBase Component: SettingsModal — Audio, theme, speed, and mission reset preferences. */
 import { useGameStore } from '../../store/gameStore';
 import { Button } from './Button';
 import { Modal } from './Modal';

@@ -1,3 +1,4 @@
+// AstroBase Root TypeScript Project References Configuration
 {
   "files": [],
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
